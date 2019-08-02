@@ -161,7 +161,7 @@ endif
 #
 
 LOG_DRIVER = $(top_srcdir)/build/tap-driver
-LOG_COMPILER = $(top_srcdir)/build/tap-gtester
+LOG_COMPILER = sh -c '"$$0" "$$@" --tap'
 
 VALGRIND_ARGS = --trace-children=no --quiet --error-exitcode=33 \
 	--suppressions=valgrind-suppressions --gen-suppressions=all \
@@ -183,7 +183,6 @@ recheck-memory: valgrind-suppressions
 
 EXTRA_DIST += \
 	$(LOG_DRIVER) \
-	$(LOG_COMPILER) \
 	$(VALGRIND_SUPPRESSIONS) \
 	$(NULL)
 
