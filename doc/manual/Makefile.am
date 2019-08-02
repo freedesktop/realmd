@@ -37,6 +37,7 @@ MANUAL_XSLT = \
 	doc/manual/gdbus-fix-bugs.xsl \
 	doc/manual/gtk-doc.xsl \
 	doc/manual/version-greater-or-equal.xsl \
+	doc/manual/devhelp2.xsl \
 	$(NULL)
 
 EXTRA_DIST += \
