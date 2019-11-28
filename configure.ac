@@ -31,7 +31,8 @@ AC_ARG_WITH([distro],
             [AS_HELP_STRING([--with-distro],
                             [Configure for a specific distribution (eg: redhat)]
                            )],
-            [DISTRO=$withval])
+            [DISTRO=$withval],
+            [DISTRO=])
 
 if test -z $DISTRO; then
 	AC_CHECK_FILE(/etc/redhat-release, [DISTRO="redhat"])
