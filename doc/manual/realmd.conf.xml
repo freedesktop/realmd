@@ -365,12 +365,17 @@ computer-name = SERVER01
 	</listitem>
 	</varlistentry>
 	<varlistentry>
-	<term><option>user-prinicpal</option></term>
+	<term><option>user-principal</option></term>
 	<listitem>
-		<para>Set the <option>user-prinicpal</option> to <code>yes</code>
-		to create <option>userPrincipalName</option> attributes for the
-		computer account in the realm, in the form
-		<code>host/computer@REALM</code></para>
+		<para>Set the <option>user-principal</option> to <code>yes</code>
+		to create <option>userPrincipalName</option> attribute for the
+		computer accounts in the realm. The exact value depends on the
+		defaults of the used membership software. To have full control
+		over the value please use the
+		<option>--user-principal</option> option of the
+		<command>realm</command> command, see
+		<citerefentry><refentrytitle>realm</refentrytitle>
+		<manvolnum>8</manvolnum></citerefentry> for details.</para>
 
 		<informalexample>
 <programlisting language="js">
