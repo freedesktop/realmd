@@ -471,4 +471,11 @@ fully-qualified-names = no
 	</variablelist>
 </refsect1>
 
+<refsect1 id='realmd_conf_see_also'>
+	<title>SEE ALSO</title>
+
+	<para><citerefentry><refentrytitle>realm</refentrytitle>
+	<manvolnum>8</manvolnum></citerefentry></para>
+</refsect1>
+
 </refentry>

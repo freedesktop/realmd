@@ -440,4 +440,11 @@ $ realm deny --all
 
 </refsect1>
 
+<refsect1 id='realm_see_also'>
+	<title>SEE ALSO</title>
+
+	<para><citerefentry><refentrytitle>realmd.conf</refentrytitle>
+	<manvolnum>5</manvolnum></citerefentry></para>
+</refsect1>
+
 </refentry>
