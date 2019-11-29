@@ -49,6 +49,7 @@ temp.txt
 /dbus/realm-dbus-systemd.h
 /dbus/realm-dbus-generated-*.xml
 
+/doc/privatedir.xml
 /doc/version.xml
 /doc/internals/html/
 /doc/manual/*.stamp

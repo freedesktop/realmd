@@ -1,13 +1,19 @@
+XSLTPROC_FLAGS = --path $(abs_builddir):$(abs_srcdir):$(abs_builddir)/doc
 
 man8_MANS += \
 	doc/manual/realm.8
 man5_MANS += \
 	doc/manual/realmd.conf.5
 
+$(man5_MANS): doc/privatedir.xml
+
 MAN_IN_FILES = \
 	$(man8_MANS:.8=.xml) \
 	$(man5_MANS:.5=.xml) \
 	$(NULL)
+
+doc/privatedir.xml: doc/privatedir.xml.in
+	$(V_SED) $(MKDIR_P) $(dir $@) && $(SED_SUBST) $< > $@
 
 MANUAL_DOCBOOK = doc/manual/realmd-docs.xml
 
@@ -41,6 +47,7 @@ MANUAL_XSLT = \
 	$(NULL)
 
 EXTRA_DIST += \
+	doc/privatedir.xml.in \
 	$(MANUAL_DOCBOOK) \
 	$(MANUAL_INCLUDES) \
 	$(MAN_IN_FILES) \
@@ -50,6 +57,7 @@ EXTRA_DIST += \
 
 CLEANFILES += \
 	realmd-org.freedesktop.realmd.generated \
+	doc/privatedir.xml \
 	$(DBUS_DOC_GENERATED) \
 	$(DBUS_ESCAPED) \
 	$(man8_MANS) \

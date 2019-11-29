@@ -1,6 +1,9 @@
 <?xml version='1.0'?>
 <!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.2//EN"
-        "http://www.oasis-open.org/docbook/xml/4.2/docbookx.dtd">
+        "http://www.oasis-open.org/docbook/xml/4.2/docbookx.dtd"
+[
+<!ENTITY privatedir SYSTEM "privatedir.xml">
+]>
 
 <refentry id="realmd-conf">
 
@@ -35,7 +38,9 @@
 	to act in specific ways. This is done by placing settings in a
 	<filename>/etc/realmd.conf</filename>. This file does not exist by
 	default. The syntax of this file is the same as an INI file or
-	Desktop Entry file.</para>
+	Desktop Entry file. If the file is changed and
+	<command>realmd</command> is running <command>realmd</command> must be
+	restarted to read the new values.</para>
 
 	<para>In general, settings in this file only apply at the point of
 	joining a domain or realm. Once the realm has been setup the settings
@@ -46,8 +51,10 @@
 
 	<para>Only specify the settings you wish to override in the
 	<filename>/etc/realmd.conf</filename> file. Settings not specified will
-	be loaded from their packaged defaults. Only override the settings
-	below. You may find other settings if you look through the
+	be loaded from their packaged defaults which can be found in
+	<filename>&privatedir;/realmd-defaults.conf</filename> and
+	<filename>&privatedir;/realmd-distro.conf</filename>. Only override the
+	settings below. You may find other settings if you look through the
 	<command>realmd</command> source code. However these are not guaranteed
 	to remain stable.</para>
 
