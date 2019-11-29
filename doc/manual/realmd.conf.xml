@@ -308,7 +308,7 @@ DOMAIN\user:*:13445:13446:Name:/home/DOMAIN/user:/bin/bash
 
 	<informalexample>
 <screen>
-$ <command>realm discover --name DOMAIN.example.com</command>
+$ <command>realm discover --name-only DOMAIN.example.com</command>
 domain.example.com
 ...
 </screen>
