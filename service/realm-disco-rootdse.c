@@ -226,9 +226,32 @@ request_domain_info (GTask *task,
                      LDAP *ldap)
 {
 	const char *attrs[] = { "info", "associatedDomain", NULL };
+	int ret;
+	int ldap_opt_val;
 
 	clo->request = NULL;
 	clo->result = result_domain_info;
+
+	/* Trying to setup a TLS tunnel in the case the IPA server requires an
+	 * encrypted connected. Trying without in case of an error. Since we
+	 * most probably do not have the IPA CA certificate we will not check
+	 * the server certificate. */
+	ldap_opt_val = LDAP_OPT_X_TLS_NEVER;
+	ret = ldap_set_option (ldap, LDAP_OPT_X_TLS_REQUIRE_CERT, &ldap_opt_val);
+	if (ret != LDAP_OPT_SUCCESS) {
+		g_debug ("Failed to disable certificate checking, trying without");
+	}
+
+	ldap_opt_val = 0;
+	ret = ldap_set_option (ldap, LDAP_OPT_X_TLS_NEWCTX, &ldap_opt_val);
+	if (ret != LDAP_OPT_SUCCESS) {
+		g_debug ("Failed to refresh LDAP context for TLS, trying without");
+	}
+
+	ret = ldap_start_tls_s (ldap, NULL, NULL);
+	if (ret != LDAP_SUCCESS) {
+		g_debug ("Failed to setup TLS tunnel, trying without");
+	}
 
 	return search_ldap (task, clo, ldap, clo->default_naming_context,
 	                    LDAP_SCOPE_BASE, NULL, attrs);

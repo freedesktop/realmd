@@ -238,7 +238,9 @@ realm_ldap_connect_anonymous (GSocketAddress *address,
 		if (!g_unix_set_fd_nonblocking (ls->sock, FALSE, NULL))
 			g_warning ("couldn't set to blocking");
 
-		rc = ldap_init_fd (ls->sock, 1, NULL, &ls->ldap);
+		url = g_strdup_printf ("ldap://%s:%d", addrname, port);
+		rc = ldap_init_fd (ls->sock, 1, url, &ls->ldap);
+		g_free (url);
 
 		g_free (native);
 
