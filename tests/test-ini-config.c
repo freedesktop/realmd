@@ -29,7 +29,7 @@ static void
 setup (Test *test,
        gconstpointer unused)
 {
-	test->config = realm_ini_config_new (REALM_INI_LINE_CONTINUATIONS);
+	test->config = realm_ini_config_new (REALM_INI_NO_WATCH | REALM_INI_LINE_CONTINUATIONS);
 }
 
 static void
