@@ -372,7 +372,8 @@ begin_join (GTask *task,
 	} else if (join->user_name) {
 		begin_net_process (join, join->password_input,
 		                   on_join_do_keytab, g_object_ref (task),
-		                   "-U", join->user_name, "ads", "join", join->disco->domain_name,
+		                   "-U", join->user_name,
+		                   "-k", "ads", "join", join->disco->domain_name,
 		                   join->join_args[0], join->join_args[1],
 		                   join->join_args[2], join->join_args[3],
 		                   join->join_args[4], NULL);
