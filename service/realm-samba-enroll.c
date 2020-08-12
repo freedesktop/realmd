@@ -33,6 +33,9 @@
 #include <errno.h>
 #include <fcntl.h>
 #include <string.h>
+#include <sys/types.h>
+#include <sys/socket.h>
+#include <netdb.h>
 
 typedef struct {
 	GDBusMethodInvocation *invocation;
@@ -81,6 +84,44 @@ fallback_workgroup (const gchar *realm)
 		return g_utf8_strup (realm, pos - realm);
 }
 
+static char *
+try_to_get_fqdn (void)
+{
+	char hostname[HOST_NAME_MAX + 1];
+	gchar *fqdn = NULL;
+	int ret;
+	struct addrinfo *res;
+	struct addrinfo hints;
+
+	ret = gethostname (hostname, sizeof (hostname));
+	if (ret < 0) {
+		return NULL;
+	}
+
+	if (strchr (hostname, '.') == NULL) {
+		memset (&hints, 0, sizeof (struct addrinfo));
+		hints.ai_socktype = SOCK_DGRAM;
+		hints.ai_flags = AI_CANONNAME;
+
+		ret = getaddrinfo (hostname, NULL, &hints, &res);
+		if (ret != 0) {
+			return NULL;
+		}
+
+		/* Only use a fully-qualified name */
+		if (strchr (res->ai_canonname, '.') != NULL) {
+			fqdn = g_strdup (res->ai_canonname);
+		}
+
+		freeaddrinfo (res);
+
+	} else {
+		fqdn = g_strdup (hostname);
+	}
+
+	return fqdn;
+}
+
 static JoinClosure *
 join_closure_init (GTask *task,
                    RealmDisco *disco,
@@ -95,6 +136,8 @@ join_closure_init (GTask *task,
 	const gchar *explicit_computer_name = NULL;
 	const gchar *authid = NULL;
 	gchar *name_from_keytab = NULL;
+	gchar *fqdn = NULL;
+	gchar *fqdn_dom = NULL;
 
 	join = g_new0 (JoinClosure, 1);
 	join->disco = realm_disco_ref (disco);
@@ -124,7 +167,7 @@ join_closure_init (GTask *task,
 	                      "netbios name", authid,
 	                      NULL);
 
-    /*
+	/*
 	 * Samba complains if we don't set a 'workgroup' setting for the realm we're
 	 * going to join. If we didn't yet manage to lookup the workgroup, then go ahead
 	 * and assume that the first domain component is the workgroup name.
@@ -143,6 +186,18 @@ join_closure_init (GTask *task,
 		else
 			g_free (workgroup);
 	}
+
+	/* Add the fully-qualified DNS hostname as additional name if it is from
+	* a different domain. */
+	fqdn = try_to_get_fqdn ();
+	if (fqdn != NULL && join->disco->domain_name != NULL
+	                 && (fqdn_dom = strchr (fqdn, '.')) != NULL
+	                 && g_ascii_strcasecmp (fqdn_dom + 1, join->disco->domain_name) != 0 ) {
+		disco->dns_fqdn = g_strdup (fqdn);
+		realm_ini_config_set (join->config, REALM_SAMBA_CONFIG_GLOBAL,
+		                      "additional dns hostnames", disco->dns_fqdn, NULL);
+	}
+	g_free (fqdn);
 
 	/* Write out the config file for use by various net commands */
 	join->custom_smb_conf = g_build_filename (g_get_tmp_dir (), "realmd-smb-conf.XXXXXX", NULL);

@@ -204,6 +204,11 @@ on_join_do_winbind (GObject *source,
 		                         NULL);
 	}
 
+	if (error == NULL && enroll->disco->dns_fqdn != NULL) {
+		realm_ini_config_change (self->config, REALM_SAMBA_CONFIG_GLOBAL, &error,
+		                         "additional dns hostnames", enroll->disco->dns_fqdn,
+		                         NULL);
+	}
 
 	if (error == NULL) {
 		name = realm_kerberos_get_name (REALM_KERBEROS (self));
@@ -364,6 +369,7 @@ leave_deconfigure_begin (RealmSamba *self,
 	if (!realm_ini_config_change (self->config, REALM_SAMBA_CONFIG_GLOBAL, &error,
 	                              "workgroup", NULL,
 	                              "realm", NULL,
+	                              "additional dns hostnames", NULL,
 	                              "security", "user",
 	                              NULL)) {
 		g_task_return_error (task, error);
