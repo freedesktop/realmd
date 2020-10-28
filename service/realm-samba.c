@@ -21,6 +21,7 @@
 #include "realm-disco.h"
 #include "realm-errors.h"
 #include "realm-kerberos.h"
+#include "realm-kerberos-config.h"
 #include "realm-kerberos-membership.h"
 #include "realm-options.h"
 #include "realm-packages.h"
@@ -208,6 +209,17 @@ on_join_do_winbind (GObject *source,
 		realm_ini_config_change (self->config, REALM_SAMBA_CONFIG_GLOBAL, &error,
 		                         "additional dns hostnames", enroll->disco->dns_fqdn,
 		                         NULL);
+	}
+
+	if (error == NULL) {
+		configure_krb5_conf_for_domain (enroll->disco->kerberos_realm, &error);
+		if (error != NULL) {
+			realm_diagnostics_error (enroll->invocation, error,
+			                         "Failed to update Kerberos "
+			                         "configuration, not fatal, "
+			                         "please check manually");
+			g_clear_error (&error);
+		}
 	}
 
 	if (error == NULL) {

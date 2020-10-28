@@ -304,6 +304,75 @@ DOMAIN\user:*:13445:13446:Name:/home/DOMAIN/user:/bin/bash
 
 </refsect1>
 
+<refsect1 id="realmd-conf-paths">
+	<title>paths</title>
+
+	<para>These options should go in an <option>[paths]</option>
+	section of the <filename>/etc/realmd.conf</filename> file. Only
+	specify the settings you wish to override.</para>
+
+	<variablelist>
+	<varlistentry>
+	<term><option>krb5.conf</option></term>
+	<listitem>
+		<para>Path to the Kerberos configuration file, typically
+		<filename>/etc/krb5.conf</filename>. It can also be the path of
+		a file included by <filename>/etc/krb5.conf</filename>, e.g.
+		<filename>/etc/krb5.conf.d/realmd_settings</filename>, if the
+		file does not exist if will be created.</para>
+
+		<informalexample>
+<programlisting language="js">
+[paths]
+krb5.conf = /etc/krb5.conf.d/realmd_settings
+
+</programlisting>
+		</informalexample>
+
+		<para>When joining an Active Directory domain
+		<command>realmd</command> will set the
+		<option>default_realm</option> and
+		<option>udp_preference_limit</option> options in the Kerberos
+		configuration:</para>
+
+		<informalexample>
+<programlisting language="js">
+default_realm = DOMAIN.EXAMPLE.COM
+udp_preference_limit = 0
+
+</programlisting>
+		</informalexample>
+
+		<para>The <option>default_realm</option> option is e.g. needed
+		when trying to resolve enterprise principals and makes it more
+		convenient to request Kerberos tickets for users of the default
+		realm. Instead of specifying the whole principal just
+		<command>kinit username</command> can be used.</para>
+
+		<para>With <option>udp_preference_limit = 0</option> always TCP
+		will be used to send Kerberos request to domain controller. This
+		is useful in Active Directory environments because Kerberos will
+		typically switch to TCP after initially starting with UDP
+		because AD Kerberos tickets are often larger than UDP can handle.
+		Using TCP by default will avoid those extra UDP round trips.
+		Additionally it helps to avoid issues with password changes when
+		the DC does not reply soon enough and the client will send a
+		second UDP request. The DC might reply with a reply error to the
+		second request although the original password change request was
+		successful and the client will no know if the request was
+		successful or not. When using TCP this cannot happen because the
+		client will never send a second request but waits on the
+		connection until the server replies.</para>
+
+		<para>Please note that <command>realmd</command> will not remove
+		those options while leaving the domain since they are useful in
+		general. When joining a new domain <command>realmd</command>
+		will of course overwrite <option>default_realm</option>.</para>
+	</listitem>
+	</varlistentry>
+	</variablelist>
+</refsect1>
+
 <refsect1 id="realmd-conf-specific-settings">
 	<title>Realm specific settings</title>
 	<para>These options should go in an section with the same name

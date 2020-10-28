@@ -19,6 +19,7 @@
 #include "realm-dbus-constants.h"
 #include "realm-diagnostics.h"
 #include "realm-errors.h"
+#include "realm-kerberos-config.h"
 #include "realm-kerberos-membership.h"
 #include "realm-options.h"
 #include "realm-packages.h"
@@ -254,6 +255,17 @@ on_join_do_sssd (GObject *source,
 	if (error == NULL) {
 		configure_sssd_for_domain (realm_sssd_get_config (sssd), join->disco,
 		                           join->options, join->use_adcli, &error);
+	}
+
+	if (error == NULL) {
+		configure_krb5_conf_for_domain (join->disco->kerberos_realm, &error);
+		if (error != NULL) {
+			realm_diagnostics_error (join->invocation, error,
+			                         "Failed to update Kerberos "
+			                         "configuration, not fatal, "
+			                         "please check manually");
+			g_clear_error (&error);
+		}
 	}
 
 	if (error == NULL) {
