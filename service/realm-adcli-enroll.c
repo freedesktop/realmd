@@ -80,7 +80,8 @@ realm_adcli_enroll_join_async (RealmDisco *disco,
 	GBytes *input = NULL;
 	const gchar *upn;
 	GPtrArray *args;
-	const gchar *os;
+	const gchar *os_n = NULL;
+	const gchar *os_v = NULL;
 	gchar *ccache_arg = NULL;
 	gchar *upn_arg = NULL;
 	gchar *server_arg = NULL;
@@ -144,16 +145,16 @@ realm_adcli_enroll_join_async (RealmDisco *disco,
 			g_ptr_array_add (args, (gpointer)computer_ou);
 	}
 
-	os = realm_options_ad_specific (options, "os-name");
-	if (os != NULL && !g_str_equal (os, "")) {
+	os_n = realm_options_ad_specific (options, "os-name");
+	if (os_n != NULL && !g_str_equal (os_n, "")) {
 		g_ptr_array_add (args, "--os-name");
-		g_ptr_array_add (args, (gpointer)os);
+		g_ptr_array_add (args, (gpointer)os_n);
 	}
 
-	os = realm_options_ad_specific (options, "os-version");
-	if (os != NULL && !g_str_equal (os, "")) {
+	os_v = realm_options_ad_specific (options, "os-version");
+	if (os_v != NULL && !g_str_equal (os_v, "")) {
 		g_ptr_array_add (args, "--os-version");
-		g_ptr_array_add (args, (gpointer)os);
+		g_ptr_array_add (args, (gpointer)os_v);
 	}
 
 	switch (cred->type) {
