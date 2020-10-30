@@ -68,6 +68,7 @@ void
 realm_adcli_enroll_join_async (RealmDisco *disco,
                                RealmCredential *cred,
                                GVariant *options,
+                               gboolean use_ldaps,
                                GDBusMethodInvocation *invocation,
                                GAsyncReadyCallback callback,
                                gpointer user_data)
@@ -101,6 +102,10 @@ realm_adcli_enroll_join_async (RealmDisco *disco,
 	g_ptr_array_add (args, (gpointer)disco->domain_name);
 	g_ptr_array_add (args, "--domain-realm");
 	g_ptr_array_add (args, (gpointer)disco->kerberos_realm);
+
+	if (use_ldaps) {
+		g_ptr_array_add (args, "--use-ldaps");
+	}
 
 	if (G_IS_INET_SOCKET_ADDRESS (disco->server_address)) {
 		address = g_inet_socket_address_get_address (G_INET_SOCKET_ADDRESS (disco->server_address));
@@ -218,6 +223,7 @@ void
 realm_adcli_enroll_delete_async (RealmDisco *disco,
                                  RealmCredential *cred,
                                  GVariant *options,
+                                 gboolean use_ldaps,
                                  GDBusMethodInvocation *invocation,
                                  GAsyncReadyCallback callback,
                                  gpointer user_data)
@@ -245,6 +251,10 @@ realm_adcli_enroll_delete_async (RealmDisco *disco,
 	g_ptr_array_add (args, (gpointer)disco->domain_name);
 	g_ptr_array_add (args, "--domain-realm");
 	g_ptr_array_add (args, (gpointer)disco->kerberos_realm);
+
+	if (use_ldaps) {
+		g_ptr_array_add (args, "--use-ldaps");
+	}
 
 	if (G_IS_INET_SOCKET_ADDRESS (disco->server_address)) {
 		address = g_inet_socket_address_get_address (G_INET_SOCKET_ADDRESS (disco->server_address));

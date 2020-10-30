@@ -257,7 +257,8 @@ on_install_do_join (GObject *source,
 }
 
 static gboolean
-validate_membership_options (GVariant *options,
+validate_membership_options (EnrollClosure *enroll,
+                             GVariant *options,
                              GError **error)
 {
 	const gchar *software;
@@ -271,6 +272,12 @@ validate_membership_options (GVariant *options,
 		}
 	}
 
+	if (realm_option_use_ldaps (options)) {
+		realm_diagnostics_info (enroll->invocation,
+		                        "Membership software %s does "
+		                        "not support ldaps, trying without.",
+		                        software);
+	}
 	return TRUE;
 }
 
@@ -303,7 +310,7 @@ realm_samba_join_async (RealmKerberosMembership *membership,
 		g_task_return_new_error (task, REALM_ERROR, REALM_ERROR_ALREADY_CONFIGURED,
 		                         _("Already joined to a domain"));
 
-	} else if (!validate_membership_options (options, &error)) {
+	} else if (!validate_membership_options (enroll, options, &error)) {
 		g_task_return_error (task, error);
 
 	} else {

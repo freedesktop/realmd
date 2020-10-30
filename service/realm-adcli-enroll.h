@@ -29,6 +29,7 @@ G_BEGIN_DECLS
 void         realm_adcli_enroll_join_async    (RealmDisco *disco,
                                                RealmCredential *cred,
                                                GVariant *options,
+                                               gboolean use_ldaps,
                                                GDBusMethodInvocation *invocation,
                                                GAsyncReadyCallback callback,
                                                gpointer user_data);
@@ -39,6 +40,7 @@ gboolean     realm_adcli_enroll_join_finish   (GAsyncResult *result,
 void         realm_adcli_enroll_delete_async  (RealmDisco *disco,
                                                RealmCredential *cred,
                                                GVariant *options,
+                                               gboolean use_ldaps,
                                                GDBusMethodInvocation *invocation,
                                                GAsyncReadyCallback callback,
                                                gpointer user_data);

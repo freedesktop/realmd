@@ -98,6 +98,7 @@ typedef struct {
 	GVariant *options;
 	RealmDisco *disco;
 	gboolean use_adcli;
+	gboolean use_ldaps;
 	const gchar **packages;
 } JoinClosure;
 
@@ -294,6 +295,7 @@ on_install_do_join (GObject *source,
 			realm_adcli_enroll_join_async (join->disco,
 			                               join->cred,
 			                               join->options,
+			                               join->use_ldaps,
 			                               join->invocation,
 			                               on_join_do_sssd,
 			                               g_object_ref (task));
@@ -346,6 +348,19 @@ parse_join_options (JoinClosure *join,
 			             REALM_DBUS_IDENTIFIER_ADCLI);
 			return FALSE;
 		}
+
+	/*
+	 * Check if ldaps should be used and if membership software supports
+	 * it.
+	 */
+	join->use_ldaps = realm_option_use_ldaps (options);
+	if (join->use_ldaps &&
+	           g_str_equal (software, REALM_DBUS_IDENTIFIER_SAMBA)) {
+		realm_diagnostics_info (join->invocation,
+		                        "Membership software %s does "
+		                        "not support ldaps, trying "
+		                        "without.", software);
+	}
 
 	/*
 	 * If we are enrolling with a user password, then we have to use samba,
@@ -523,6 +538,7 @@ realm_sssd_ad_leave_async (RealmKerberosMembership *membership,
 	GTask *task;
 	LeaveClosure *leave;
 	gchar *tags;
+	gboolean use_ldaps = FALSE;
 
 	task = g_task_new (self, NULL, callback, user_data);
 
@@ -551,10 +567,19 @@ realm_sssd_ad_leave_async (RealmKerberosMembership *membership,
 		leave->invocation = g_object_ref (invocation);
 		leave->use_adcli = strstr (tags ? tags : "", "joined-with-adcli") ? TRUE : FALSE;
 		g_task_set_task_data (task, leave, leave_closure_free);
+
+		use_ldaps = realm_option_use_ldaps (options);
 		if (leave->use_adcli) {
-			realm_adcli_enroll_delete_async (disco, cred, options, invocation,
+			realm_adcli_enroll_delete_async (disco, cred, options,
+			                                 use_ldaps,  invocation,
 			                                 on_leave_do_deconfigure, g_object_ref (task));
 		} else {
+			if (use_ldaps) {
+				realm_diagnostics_info (leave->invocation,
+				                        "Membership software does "
+				                        "not support ldaps, trying "
+				                        "without.");
+			}
 			realm_samba_enroll_leave_async (disco, cred, options, invocation,
 			                                on_leave_do_deconfigure, g_object_ref (task));
 		}
