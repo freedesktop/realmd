@@ -40,6 +40,7 @@ RealmDbusProvider *            realm_client_get_provider             (RealmClien
 
 GList *                        realm_client_discover                 (RealmClient *self,
                                                                       const gchar *string,
+                                                                      gboolean use_ldaps,
                                                                       const gchar *client_software,
                                                                       const gchar *server_software,
                                                                       const gchar *membership_software,

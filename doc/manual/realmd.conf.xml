@@ -142,6 +142,27 @@ domain.example.com
 	</varlistentry>
 
 	<varlistentry>
+	<term><option>use-ldaps</option></term>
+	<listitem><para>Use the ldaps port when connecting to AD where possible.
+	In general this option is not needed because <command>realmd</command>
+	itself only read public information from the Active Directory domain
+	controller which is available anonymously. The supported membership
+	software products will use encrypted connections protected with
+	GSS-SPNEGO/GSSAPI which offers a comparable level of security than
+	ldaps. This option is only needed if the standard LDAP port (389/tcp)
+	is blocked by a firewall and only the LDAPS port (636/tcp) is
+	available.</para>
+
+	<para>If this option is set to <parameter>yes</parameter>
+	<command>realmd</command> will use the ldaps port when reading the
+	rootDSE and call the <command>adcli</command> membership software with
+	the option <option>--use-ldaps</option>. The Samba base membership
+	currently offers only deprecated ways to enable ldaps. Support will be
+	added in <command>realmd</command> when a new way is available.</para>
+	</listitem>
+	</varlistentry>
+
+	<varlistentry>
 	<term><option>os-name</option></term>
 	<listitem><para>(see below)</para></listitem>
 	</varlistentry>

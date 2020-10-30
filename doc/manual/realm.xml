@@ -134,6 +134,11 @@ $ realm discover domain.example.com
 			Possible values include <replaceable>samba</replaceable> or
 			<replaceable>adcli</replaceable>. </para></listitem>
 		</varlistentry>
+		<varlistentry>
+			<term><option>--use-ldaps</option></term>
+			<listitem><para>See option description in
+			<xref linkend="man-join"/>.</para></listitem>
+		</varlistentry>
 	</variablelist>
 
 </refsect1>
@@ -276,6 +281,30 @@ $ realm join --user=admin --computer-ou=OU=Special domain.example.com
 			principal besides the AD default user principal can be
 			set.</para></listitem>
 		</varlistentry>
+		<varlistentry>
+			<term><option>--use-ldaps</option></term>
+			<listitem><para>Use the ldaps port when connecting to AD
+			where possible.  In general this option is not needed
+			because <command>realmd</command> itself only read
+			public information from the Active Directory domain
+			controller which is available anonymously. The
+			supported membership software products will use
+			encrypted connections protected with GSS-SPNEGO/GSSAPI
+			which offers a comparable level of security than ldaps.
+			This option is only needed if the standard LDAP port
+			(389/tcp) is blocked by a firewall and only the LDAPS
+			port (636/tcp) is available.</para>
+
+			<para>If this option is set to
+			<parameter>yes</parameter> <command>realmd</command>
+			will use the ldaps port when reading the rootDSE and
+			call the <command>adcli</command> membership software
+			with the option <option>--use-ldaps</option>. The Samba
+			base membership currently offers only deprecated ways
+			to enable ldaps. Support will be added in
+			<command>realmd</command> when a new way is available.
+			</para></listitem>
+		</varlistentry>
 	</variablelist>
 
 </refsect1>
@@ -325,6 +354,11 @@ $ realm leave domain.example.com
 			<listitem><para>The user name to be used to authenticate
 			with when leaving the realm. You will be prompted for a
 			password. Implies <option>--remove</option>.</para></listitem>
+		</varlistentry>
+		<varlistentry>
+			<term><option>--use-ldaps</option></term>
+			<listitem><para>See option description in
+			<xref linkend="man-join"/>.</para></listitem>
 		</varlistentry>
 	</variablelist>
 

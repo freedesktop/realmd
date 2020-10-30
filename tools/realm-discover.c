@@ -116,6 +116,7 @@ perform_discover (RealmClient *client,
                   const gchar *string,
                   gboolean all,
                   gboolean name_only,
+                  gboolean use_ldaps,
                   const gchar *server_software,
                   const gchar *client_software,
                   const gchar *membership_software)
@@ -127,7 +128,7 @@ perform_discover (RealmClient *client,
 	GList *realms;
 	GList *l;
 
-	realms = realm_client_discover (client, string, client_software,
+	realms = realm_client_discover (client, string, use_ldaps, client_software,
 	                                server_software, membership_software,
 	                                REALM_DBUS_REALM_INTERFACE, NULL, &error);
 
@@ -173,6 +174,7 @@ realm_discover (RealmClient *client,
 	GError *error = NULL;
 	gboolean arg_all = FALSE;
 	gboolean arg_name_only = FALSE;
+	gboolean arg_use_ldaps = FALSE;
 	gint result = 0;
 	gint ret;
 	gint i;
@@ -183,6 +185,7 @@ realm_discover (RealmClient *client,
 		{ "client-software", 0, 0, G_OPTION_ARG_STRING, &arg_client_software, N_("Use specific client software"), NULL },
 		{ "membership-software", 0, 0, G_OPTION_ARG_STRING, &arg_membership_software, N_("Use specific membership software"), NULL },
 		{ "server-software", 0, 0, G_OPTION_ARG_STRING, &arg_server_software, N_("Use specific server software"), NULL },
+		{ "use-ldaps", 0, 0, G_OPTION_ARG_NONE, &arg_use_ldaps, N_("Use ldaps to connect to LDAP"), NULL },
 		{ NULL, }
 	};
 
@@ -200,6 +203,7 @@ realm_discover (RealmClient *client,
 	} else if (argc == 1) {
 		result = perform_discover (client, NULL, arg_all,
 		                           arg_name_only,
+		                           arg_use_ldaps,
 		                           arg_server_software,
 		                           arg_client_software,
 		                           arg_membership_software);
@@ -209,6 +213,7 @@ realm_discover (RealmClient *client,
 		for (i = 1; i < argc; i++) {
 			ret = perform_discover (client, argv[i], arg_all,
 			                        arg_name_only,
+			                        arg_use_ldaps,
 			                        arg_server_software,
 			                        arg_client_software,
 			                        arg_membership_software);

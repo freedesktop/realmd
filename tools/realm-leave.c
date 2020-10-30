@@ -185,6 +185,7 @@ perform_deconfigure (RealmClient *client,
 
 static int
 perform_user_leave (RealmClient *client,
+                    gboolean use_ldaps,
                     RealmDbusKerberosMembership *membership,
                     const gchar *user_name)
 {
@@ -201,7 +202,8 @@ perform_user_leave (RealmClient *client,
 		return 1;
 	}
 
-	options = realm_build_options(NULL, NULL);
+	options = realm_build_options (REALM_DBUS_OPTION_USE_LDAPS, use_ldaps ? "True" : "False",
+	                               NULL);
 	ret = call_leave (membership, credentials, options, &error);
 
 	if (error != NULL)
@@ -213,6 +215,7 @@ perform_user_leave (RealmClient *client,
 static int
 perform_leave (RealmClient *client,
                const gchar *realm_name,
+               gboolean use_ldaps,
                gboolean remove,
                const gchar *user_name,
                const gchar *client_software,
@@ -239,7 +242,8 @@ perform_leave (RealmClient *client,
 	if (!remove)
 		ret = perform_deconfigure (client, realm);
 	else
-		ret = perform_user_leave (client, membership, user_name);
+		ret = perform_user_leave (client, use_ldaps, membership,
+		                          user_name);
 
 	g_object_unref (membership);
 	g_object_unref (realm);
@@ -259,6 +263,7 @@ realm_leave (RealmClient *client,
 	gchar *arg_server_software = NULL;
 	GError *error = NULL;
 	const gchar *realm_name;
+	gboolean arg_use_ldaps = FALSE;
 	gint ret = 0;
 
 	GOptionEntry option_entries[] = {
@@ -268,6 +273,7 @@ realm_leave (RealmClient *client,
 		{ "server-software", 0, 0, G_OPTION_ARG_STRING, &arg_server_software,
 		  N_("Use specific server software"), NULL },
 		{ "user", 'U', 0, G_OPTION_ARG_STRING, &arg_user, N_("User name to use for removal"), NULL },
+		{ "use-ldaps", 0, 0, G_OPTION_ARG_NONE, &arg_use_ldaps, N_("Use ldaps to connect to LDAP"), NULL },
 		{ NULL, }
 	};
 
@@ -283,8 +289,9 @@ realm_leave (RealmClient *client,
 
 	} else {
 		realm_name = argc < 2 ? NULL : argv[1];
-		ret = perform_leave (client, realm_name, arg_remove, arg_user,
-		                     arg_client_software, arg_server_software);
+		ret = perform_leave (client, realm_name, arg_use_ldaps,
+		                     arg_remove, arg_user, arg_client_software,
+		                     arg_server_software);
 	}
 
 	g_free (arg_user);

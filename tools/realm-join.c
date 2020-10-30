@@ -179,6 +179,7 @@ typedef struct {
 	gchar *user_principal;
 	gboolean automatic_id_mapping_set;
 	gboolean automatic_id_mapping;
+	gboolean use_ldaps;
 } RealmJoinArgs;
 
 static void
@@ -218,7 +219,7 @@ perform_join (RealmClient *client,
 	GList *realms;
 	gint ret;
 
-	realms = realm_client_discover (client, string, args->client_software,
+	realms = realm_client_discover (client, string, args->use_ldaps, args->client_software,
 	                                args->server_software, args->membership_software,
 	                                REALM_DBUS_KERBEROS_MEMBERSHIP_INTERFACE,
 	                                &had_mismatched, &error);
@@ -247,6 +248,7 @@ perform_join (RealmClient *client,
 	                               REALM_DBUS_OPTION_OS_VERSION, args->os_version,
 	                               REALM_DBUS_OPTION_MEMBERSHIP_SOFTWARE, args->membership_software,
 	                               REALM_DBUS_OPTION_USER_PRINCIPAL, args->user_principal,
+	                               REALM_DBUS_OPTION_USE_LDAPS, args->use_ldaps ? "True" : "False",
 	                               args->automatic_id_mapping_set ?
 	                                   REALM_DBUS_OPTION_AUTOMATIC_ID_MAPPING : NULL,
 	                                   args->automatic_id_mapping,
@@ -310,6 +312,8 @@ realm_join (RealmClient *client,
 		  N_("User name to use for enrollment"), NULL },
 		{ "user-principal", 0, 0, G_OPTION_ARG_STRING, &args.user_principal,
 		  N_("Set the user principal for the computer account"), NULL },
+		{ "use-ldaps", 0, 0, G_OPTION_ARG_NONE, &args.use_ldaps,
+		  N_("Use ldaps to connect to LDAP"), NULL },
 		{ NULL, }
 	};
 

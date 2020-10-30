@@ -353,6 +353,7 @@ realm_client_get_provider (RealmClient *self)
 GList *
 realm_client_discover (RealmClient *self,
                        const gchar *string,
+                       gboolean use_ldaps,
                        const gchar *client_software,
                        const gchar *server_software,
                        const gchar *membership_software,
@@ -381,6 +382,7 @@ realm_client_discover (RealmClient *self,
 	options = realm_build_options (REALM_DBUS_OPTION_CLIENT_SOFTWARE, client_software,
 	                               REALM_DBUS_OPTION_SERVER_SOFTWARE, server_software,
 	                               REALM_DBUS_OPTION_MEMBERSHIP_SOFTWARE, membership_software,
+	                               REALM_DBUS_OPTION_USE_LDAPS, use_ldaps ? "True" : "False",
 	                               NULL);
 
 	/* Start actual operation */
