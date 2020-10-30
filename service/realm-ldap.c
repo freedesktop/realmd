@@ -190,6 +190,7 @@ realm_ldap_connect_anonymous (GSocketAddress *address,
 	LdapSource *ls;
 	gchar *addrname;
 	GInetSocketAddress *inet;
+	GSocketFamily family;
 	struct berval cred;
 	Sockbuf *sb = NULL;
 	gsize native_len;
@@ -204,6 +205,7 @@ realm_ldap_connect_anonymous (GSocketAddress *address,
 	inet = G_INET_SOCKET_ADDRESS (address);
 	addrname = g_inet_address_to_string (g_inet_socket_address_get_address (inet));
 	port = g_inet_socket_address_get_port (inet);
+	family = g_inet_address_get_family (g_inet_socket_address_get_address (inet));
 	if (port == 0)
 		port = 389;
 
@@ -239,9 +241,17 @@ realm_ldap_connect_anonymous (GSocketAddress *address,
 		if (!g_unix_set_fd_nonblocking (ls->sock, FALSE, NULL))
 			g_warning ("couldn't set to blocking");
 
-		url = g_strdup_printf ("%s://%s:%d",
-		                       use_ldaps ? "ldaps" : "ldap",
-		                       addrname, port);
+		if (family == G_SOCKET_FAMILY_IPV4) {
+			url = g_strdup_printf ("%s://%s:%d",
+			                       use_ldaps ? "ldaps" : "ldap",
+			                       addrname, port);
+		} else if (family == G_SOCKET_FAMILY_IPV6) {
+			url = g_strdup_printf ("%s://[%s]:%d",
+			                       use_ldaps ? "ldaps" : "ldap",
+			                       addrname, port);
+		} else {
+			url = NULL;
+		}
 		rc = ldap_init_fd (ls->sock, 1, url, &ls->ldap);
 		g_free (url);
 
