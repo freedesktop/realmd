@@ -37,6 +37,7 @@ typedef struct _Callback {
 typedef struct {
 	GObject parent;
 	gchar *input;
+	gboolean use_ldaps;
 	GCancellable *cancellable;
 	GDBusMethodInvocation *invocation;
 	GSocketAddressEnumerator *enumerator;
@@ -206,6 +207,7 @@ on_discover_next_address (GObject *source,
 
 		realm_diagnostics_info (self->invocation, "Performing LDAP DSE lookup on: %s", string);
 		realm_disco_rootdse_async (address, explicit_host,
+		                           self->use_ldaps,
 		                           self->invocation, self->cancellable,
 		                           on_discover_rootdse, g_object_ref (self));
 		self->outstanding++;
@@ -248,6 +250,7 @@ on_cancel_propagate (GCancellable *source,
 
 void
 realm_disco_domain_async (const gchar *string,
+                          gboolean use_ldaps,
                           GDBusMethodInvocation *invocation,
                           GAsyncReadyCallback callback,
                           gpointer user_data)
@@ -267,8 +270,11 @@ realm_disco_domain_async (const gchar *string,
 	if (self == NULL) {
 		self = g_object_new (REALM_TYPE_DISCO_DOMAIN, NULL);
 		self->input = g_strdup (string);
+		self->use_ldaps = use_ldaps;
 		self->invocation = g_object_ref (invocation);
-		self->enumerator = realm_disco_dns_enumerate_servers (string, invocation);
+		self->enumerator = realm_disco_dns_enumerate_servers (string,
+		                                                      use_ldaps,
+		                                                      invocation);
 
 		g_hash_table_insert (discover_cache, self->input, self);
 		g_assert (!self->completed);

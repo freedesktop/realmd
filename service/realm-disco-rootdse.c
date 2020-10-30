@@ -452,6 +452,7 @@ on_ldap_io (LDAP *ldap,
 void
 realm_disco_rootdse_async (GSocketAddress *address,
                            const gchar *explicit_server,
+                           gboolean use_ldaps,
                            GDBusMethodInvocation *invocation,
                            GCancellable *cancellable,
                            GAsyncReadyCallback callback,
@@ -473,7 +474,7 @@ realm_disco_rootdse_async (GSocketAddress *address,
 	g_task_set_task_data (task, clo, closure_free);
 
 	clo->source = realm_ldap_connect_anonymous (address, G_SOCKET_PROTOCOL_TCP,
-	                                            cancellable);
+	                                            use_ldaps, cancellable);
 	g_source_set_callback (clo->source, (GSourceFunc)on_ldap_io,
 	                       g_object_ref (task), g_object_unref);
 	g_source_attach (clo->source, g_task_get_context (task));

@@ -183,6 +183,7 @@ int ldap_init_fd (ber_socket_t fd, int proto, LDAP_CONST char *url, struct ldap 
 GSource *
 realm_ldap_connect_anonymous (GSocketAddress *address,
                               GSocketProtocol protocol,
+                              gboolean use_ldaps,
                               GCancellable *cancellable)
 {
 	GSource *source;
@@ -238,7 +239,9 @@ realm_ldap_connect_anonymous (GSocketAddress *address,
 		if (!g_unix_set_fd_nonblocking (ls->sock, FALSE, NULL))
 			g_warning ("couldn't set to blocking");
 
-		url = g_strdup_printf ("ldap://%s:%d", addrname, port);
+		url = g_strdup_printf ("%s://%s:%d",
+		                       use_ldaps ? "ldaps" : "ldap",
+		                       addrname, port);
 		rc = ldap_init_fd (ls->sock, 1, url, &ls->ldap);
 		g_free (url);
 

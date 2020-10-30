@@ -27,6 +27,7 @@
 #include "realm-samba-enroll.h"
 #include "realm-samba-provider.h"
 #include "realm-samba-winbind.h"
+#include "realm-options.h"
 
 #include <glib/gstdio.h>
 
@@ -121,7 +122,9 @@ realm_samba_provider_discover_async (RealmProvider *provider,
 		g_task_return_pointer (task, NULL, NULL);
 
 	} else {
-		realm_disco_domain_async (string, invocation,
+		realm_disco_domain_async (string,
+		                          realm_option_use_ldaps (options),
+		                          invocation,
 		                          on_ad_discover, g_object_ref (task));
 	}
 

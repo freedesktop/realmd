@@ -26,6 +26,7 @@ typedef enum {
 G_BEGIN_DECLS
 
 GSocketAddressEnumerator *  realm_disco_dns_enumerate_servers    (const gchar *domain_or_server,
+                                                                  gboolean use_ldaps,
                                                                   GDBusMethodInvocation *invocation);
 
 RealmDiscoDnsHint           realm_disco_dns_get_hint             (GSocketAddressEnumerator *enumerator);

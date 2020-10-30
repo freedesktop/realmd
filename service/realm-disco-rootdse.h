@@ -21,6 +21,7 @@
 
 void           realm_disco_rootdse_async    (GSocketAddress *address,
                                              const gchar *explicit_server,
+                                             gboolean use_ldaps,
                                              GDBusMethodInvocation *invocation,
                                              GCancellable *cancellable,
                                              GAsyncReadyCallback callback,

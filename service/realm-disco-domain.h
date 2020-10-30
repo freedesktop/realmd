@@ -24,6 +24,7 @@
 G_BEGIN_DECLS
 
 void          realm_disco_domain_async    (const gchar *string,
+                                           gboolean use_ldaps,
                                            GDBusMethodInvocation *invocation,
                                            GAsyncReadyCallback callback,
                                            gpointer user_data);

@@ -32,6 +32,7 @@ typedef struct {
 	GQueue addresses;
 	GQueue targets;
 	gint current_port;
+	gboolean use_ldaps;
 	gint returned;
 	DiscoPhase phase;
 	GResolver *resolver;
@@ -180,7 +181,7 @@ return_or_resolve (RealmDiscoDns *self,
 
 	target = g_queue_pop_head (&self->targets);
 	if (target) {
-		self->current_port = g_srv_target_get_port (target);
+		self->current_port = self->use_ldaps ? 636 : g_srv_target_get_port (target);
 		g_resolver_lookup_by_name_async (self->resolver, g_srv_target_get_hostname (target),
 		                                 g_task_get_cancellable (task), on_name_resolved,
 		                                 g_object_ref (task));
@@ -201,7 +202,7 @@ return_or_resolve (RealmDiscoDns *self,
 		g_resolver_lookup_by_name_async (self->resolver, self->name,
 		                                 g_task_get_cancellable (task), on_name_resolved,
 		                                 g_object_ref (task));
-		self->current_port = 389;
+		self->current_port = self->use_ldaps ? 636 : 389;
 		self->phase = PHASE_HOST;
 		break;
 	case PHASE_HOST:
@@ -251,6 +252,7 @@ realm_disco_dns_class_init (RealmDiscoDnsClass *klass)
 
 GSocketAddressEnumerator *
 realm_disco_dns_enumerate_servers (const gchar *domain_or_server,
+                                   gboolean use_ldaps,
                                    GDBusMethodInvocation *invocation)
 {
 	RealmDiscoDns *self;
@@ -262,12 +264,14 @@ realm_disco_dns_enumerate_servers (const gchar *domain_or_server,
 
 	self = g_object_new (REALM_TYPE_DISCO_DNS, NULL);
 	self->name = g_hostname_to_ascii (input);
+	self->use_ldaps = use_ldaps;
 	self->invocation = g_object_ref (invocation);
 
 	/* If is an IP, skip resolution */
 	if (g_hostname_is_ip_address (input)) {
 		inet = g_inet_address_new_from_string (input);
-		g_queue_push_head (&self->addresses, g_inet_socket_address_new (inet, 389));
+		g_queue_push_head (&self->addresses,
+		                   g_inet_socket_address_new (inet, use_ldaps ? 636 : 389));
 		g_object_unref (inet);
 		self->phase = PHASE_HOST;
 	} else {

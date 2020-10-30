@@ -348,7 +348,7 @@ realm_disco_mscldap_async (GSocketAddress *address,
 		return;
 	}
 
-	clo->source = realm_ldap_connect_anonymous (address, protocol, cancellable);
+	clo->source = realm_ldap_connect_anonymous (address, protocol, FALSE, cancellable);
 	g_source_set_callback (clo->source, (GSourceFunc)on_ldap_io,
 	                       g_object_ref (task), g_object_unref);
 	g_source_attach (clo->source, g_task_get_context (task));

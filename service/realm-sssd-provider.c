@@ -26,6 +26,7 @@
 #include "realm-sssd-ipa.h"
 #include "realm-sssd-provider.h"
 #include "realm-sssd-config.h"
+#include "realm-options.h"
 
 #include <glib/gstdio.h>
 
@@ -140,7 +141,9 @@ realm_sssd_provider_discover_async (RealmProvider *provider,
 		g_task_return_pointer (task, NULL, NULL);
 
 	} else {
-		realm_disco_domain_async (string, invocation, on_kerberos_discover,
+		realm_disco_domain_async (string,
+		                          realm_option_use_ldaps (options),
+		                          invocation, on_kerberos_discover,
 		                          g_object_ref (task));
 	}
 
