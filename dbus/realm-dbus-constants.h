@@ -70,6 +70,7 @@ G_BEGIN_DECLS
 #define   REALM_DBUS_OPTION_OS_NAME                "os-name"
 #define   REALM_DBUS_OPTION_OS_VERSION             "os-version"
 #define   REALM_DBUS_OPTION_LEGACY_SMB_CONF        "legacy-samba-config"
+#define   REALM_DBUS_OPTION_USE_LDAPS              "use-ldaps"
 
 #define   REALM_DBUS_IDENTIFIER_ACTIVE_DIRECTORY   "active-directory"
 #define   REALM_DBUS_IDENTIFIER_WINBIND            "winbind"

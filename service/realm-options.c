@@ -199,3 +199,20 @@ realm_options_ad_specific (GVariant *options,
 
 	return g_strdup (value);
 }
+
+gboolean realm_option_use_ldaps (GVariant *options)
+{
+	gchar *use_ldaps_str;
+
+	use_ldaps_str = realm_options_ad_specific (options,
+	                                          REALM_DBUS_OPTION_USE_LDAPS);
+	if (use_ldaps_str != NULL
+	            && ( g_ascii_strcasecmp (use_ldaps_str, "True") == 0
+	                || g_ascii_strcasecmp (use_ldaps_str, "Yes") == 0)) {
+		g_free (use_ldaps_str);
+		return TRUE;
+	}
+	g_free (use_ldaps_str);
+
+	return FALSE;
+}

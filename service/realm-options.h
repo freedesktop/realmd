@@ -48,6 +48,8 @@ const gchar *  realm_options_computer_name           (GVariant *options,
 const gchar *  realm_options_ad_specific              (GVariant *options,
                                                        const gchar *option_name);
 
+gboolean       realm_option_use_ldaps                 (GVariant *options);
+
 G_END_DECLS
 
 #endif /* __REALM_OPTIONS_H__ */
