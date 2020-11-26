@@ -263,6 +263,14 @@ realm_ldap_connect_anonymous (GSocketAddress *address,
 			return NULL;
 		}
 
+		if (use_ldaps) {
+			rc = ldap_install_tls (ls->ldap);
+			if (rc != LDAP_SUCCESS) {
+				g_warning ("ldap_start_tls_s() failed: %s", ldap_err2string (rc));
+				return NULL;
+			}
+		}
+
 		break;
 
 	case G_SOCKET_PROTOCOL_UDP:
