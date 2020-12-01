@@ -350,19 +350,6 @@ parse_join_options (JoinClosure *join,
 		}
 
 	/*
-	 * Check if ldaps should be used and if membership software supports
-	 * it.
-	 */
-	join->use_ldaps = realm_option_use_ldaps (options);
-	if (join->use_ldaps &&
-	           g_str_equal (software, REALM_DBUS_IDENTIFIER_SAMBA)) {
-		realm_diagnostics_info (join->invocation,
-		                        "Membership software %s does "
-		                        "not support ldaps, trying "
-		                        "without.", software);
-	}
-
-	/*
 	 * If we are enrolling with a user password, then we have to use samba,
 	 * adcli only supports admin passwords.
 	 */
@@ -392,6 +379,19 @@ parse_join_options (JoinClosure *join,
 	}
 
 	g_assert (software != NULL);
+
+	/*
+	 * Check if ldaps should be used and if membership software supports
+	 * it.
+	 */
+	join->use_ldaps = realm_option_use_ldaps (options);
+	if (join->use_ldaps &&
+	           g_str_equal (software, REALM_DBUS_IDENTIFIER_SAMBA)) {
+		realm_diagnostics_info (join->invocation,
+		                        "Membership software %s does "
+		                        "not support ldaps, trying "
+		                        "without.", software);
+	}
 
 	if (g_str_equal (software, REALM_DBUS_IDENTIFIER_ADCLI)) {
 		join->use_adcli = TRUE;
