@@ -349,6 +349,13 @@ realm_disco_mscldap_async (GSocketAddress *address,
 	}
 
 	clo->source = realm_ldap_connect_anonymous (address, protocol, FALSE, cancellable);
+	if (clo->source == NULL) {
+		g_task_return_new_error (task, G_IO_ERROR, G_IO_ERROR_NOT_CONNECTED,
+		                         _("Failed to setup LDAP connection"));
+		g_object_unref (task);
+		return;
+	}
+
 	g_source_set_callback (clo->source, (GSourceFunc)on_ldap_io,
 	                       g_object_ref (task), g_object_unref);
 	g_source_attach (clo->source, g_task_get_context (task));
