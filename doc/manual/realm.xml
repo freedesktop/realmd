@@ -293,7 +293,13 @@ $ realm join --user=admin --computer-ou=OU=Special domain.example.com
 			which offers a comparable level of security than ldaps.
 			This option is only needed if the standard LDAP port
 			(389/tcp) is blocked by a firewall and only the LDAPS
-			port (636/tcp) is available.</para>
+			port (636/tcp) is available. Given that and to lower
+			the initial effort to discover a remote domain
+			<command>realmd</command> does not require a strict
+			certificate check. If the validation of the LDAP server
+			certificate fails <command>realmd</command> will
+			continue to setup the encrypted connection to the LDAP
+			server.</para>
 
 			<para>If this option is set to
 			<parameter>yes</parameter> <command>realmd</command>

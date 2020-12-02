@@ -199,6 +199,9 @@ realm_ldap_connect_anonymous (GSocketAddress *address,
 	gint port;
 	gchar *url;
 	int rc;
+	int opt_rc;
+	int ldap_opt_val;
+	const char *errmsg = NULL;
 
 	g_return_val_if_fail (G_IS_INET_SOCKET_ADDRESS (address), NULL);
 
@@ -264,9 +267,36 @@ realm_ldap_connect_anonymous (GSocketAddress *address,
 		}
 
 		if (use_ldaps) {
+			/* Since we currently use the IP address in the URI
+			 * the certificate check might fail because in most
+			 * cases the IP address won't be listed in the SANs of
+			 * the LDAP server certificate. We will try to
+			 * continue in this case and not fail. */
+			ldap_opt_val = LDAP_OPT_X_TLS_ALLOW;
+			rc = ldap_set_option (ls->ldap,
+			                       LDAP_OPT_X_TLS_REQUIRE_CERT,
+			                       &ldap_opt_val);
+			if (rc != LDAP_OPT_SUCCESS) {
+				g_debug ("Failed to disable certificate checking, trying without");
+			}
+
+			ldap_opt_val = 0;
+			rc = ldap_set_option (ls->ldap, LDAP_OPT_X_TLS_NEWCTX,
+			                       &ldap_opt_val);
+			if (rc != LDAP_OPT_SUCCESS) {
+				g_debug ("Failed to refresh LDAP context for TLS, trying without");
+			}
+
 			rc = ldap_install_tls (ls->ldap);
 			if (rc != LDAP_SUCCESS) {
-				g_warning ("ldap_start_tls_s() failed: %s", ldap_err2string (rc));
+				opt_rc = ldap_get_option (ls->ldap,
+				                          LDAP_OPT_DIAGNOSTIC_MESSAGE,
+				                          (void *) &errmsg);
+				if (opt_rc != LDAP_SUCCESS) {
+					errmsg = "- no details -";
+				}
+				g_warning ("ldap_start_tls_s() failed [%s]: %s",
+				           ldap_err2string (rc), errmsg);
 				return NULL;
 			}
 		}
