@@ -1,4 +1,4 @@
-private_PROGRAMS += \
+libexec_PROGRAMS += \
 	realmd
 
 REALMD_CONFIGS = \

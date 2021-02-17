@@ -16,7 +16,7 @@ realm_CFLAGS = \
 	-I$(top_srcdir)/dbus \
 	-I$(top_srcdir)/build \
 	-DLOCALEDIR=\""$(datadir)/locale"\" \
-	-DREALMD_EXECUTABLE=\""$(privatedir)/realmd"\" \
+	-DREALMD_EXECUTABLE=\""$(libexecdir)/realmd"\" \
 	$(GLIB_CFLAGS) \
 	$(KRB5_CFLAGS) \
 	$(NULL)

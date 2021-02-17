@@ -380,7 +380,16 @@ AC_SUBST(TEST_MODE)
 # Results
 
 privatedir='${prefix}/lib/realmd'
+AC_MSG_CHECKING([private directory])
+AC_ARG_WITH(private-dir,
+            AC_HELP_STRING([--with-private-dir=DIR],
+                           [Directory to install realmd system defaults (default: ${prefix}/lib/realmd)]))
+
+if test -n "$with_private_dir"; then
+	privatedir="$with_private_dir"
+fi
 AC_SUBST(privatedir)
+AC_MSG_RESULT($privatedir)
 
 cachedir='${localstatedir}/cache/realmd'
 AC_SUBST(cachedir)

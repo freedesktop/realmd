@@ -79,6 +79,7 @@ noinst_PROGRAMS =
 private_PROGRAMS =
 private_DATA =
 sbin_PROGRAMS =
+libexec_PROGRAMS =
 
 CLEANFILES = $(BUILT_SOURCES)
 

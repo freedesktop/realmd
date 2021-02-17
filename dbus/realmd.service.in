@@ -5,4 +5,4 @@ Documentation=man:realm(8) man:realmd.conf(5)
 [Service]
 Type=dbus
 BusName=org.freedesktop.realmd
-ExecStart=@privatedir@/realmd
+ExecStart=@libexecdir@/realmd

@@ -1,5 +1,5 @@
 [D-BUS Service]
 Name=org.freedesktop.realmd
-Exec=@privatedir@/realmd
+Exec=@libexecdir@/realmd
 User=root
 @dbus_systemd_service@
