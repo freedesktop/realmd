@@ -507,6 +507,11 @@ main (int argc,
 	g_option_context_free (context);
 
 	if (service_install) {
+		if (service_install[0] != '/') {
+			g_message ("Install prefix [%s] must be an absolute path.",
+			           service_install);
+			return 1;
+		}
 		if (chdir (service_install) < 0) {
 			g_message ("Couldn't use install prefix: %s: %s",
 			           service_install, g_strerror (errno));

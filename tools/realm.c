@@ -269,6 +269,12 @@ main (int argc,
 	if (command == NULL)
 		return usage (2);
 
+	if (arg_install != NULL && arg_install[0] != '/') {
+		g_printerr ("Install prefix [%s] must be an absolute path.\n",
+		            arg_install);
+		return 2;
+	}
+
 	ret = 2;
 	for (i = 0; i < G_N_ELEMENTS (realm_commands); i++) {
 		if (g_str_equal (realm_commands[i].name, command)) {

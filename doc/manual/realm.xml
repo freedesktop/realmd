@@ -62,10 +62,11 @@
 		<varlistentry>
 			<term><option>-i</option>, <option>--install=/path</option></term>
 			<listitem><para>Run in install mode. This makes realmd
-			chroot into the specified directory and place files in
-			appropriate locations for use during an installer. No
-			packages will be installed or services will be started
-			when running in this mode.</para></listitem>
+			chroot into the directory specified by an absolute path
+			and place files in appropriate locations for use during
+			an installer. No packages will be installed or services
+			will be started when running in this mode.
+			</para></listitem>
 		</varlistentry>
 		<varlistentry>
 			<term><option>--unattended</option></term>
