@@ -1,7 +1,7 @@
 AC_PREREQ(2.63)
 
-AC_INIT([realmd], [0.16.3],
-        [http://bugs.freedesktop.org/enter_bug.cgi?product=realmd],
+AC_INIT([realmd], [0.17.0],
+        [https://gitlab.freedesktop.org/realmd/realmd/-/issues],
         [realmd])
 
 # -----------------------------------------------------------------------------

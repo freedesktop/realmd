@@ -1,3 +1,20 @@
+0.17.0
+ * Use current idmap options for smb.conf [rhbz#1484072]
+ * Find NetBIOS name in keytab while leaving [rhbz#1370457]
+ * Work properly with Python 3
+ * discover: try to get domain name from hostname [rhbz#1619162]
+ * Set 'NEWEST' flag when resolving packages with PackageKit
+ * service: use "kerberos method" "secrets and keytab" [rhbz#1801195]
+ * Use startTLS with FreeIPA [gfo#23]
+ * service: use 'additional dns hostnames' with net ads join [rhbz#1867912]
+ * Fix pam misconfiguration for SUSE systems
+ * Also install libnss-winbind on Debian systems
+ * Kerberos: add default_domain and udp_preference_limit [rhbz#1791016]
+ * tools: add --use-ldaps option for discover, join and leave [rhbz#1826964]
+ * Fix nsswitch handling when joining and leaving domain for suse distro
+ * paths: install realmd in libexecdir [gfo#26]
+ * tools: enforce absolute path for install option [gfo#27]
+
 0.16.3
  * Add os-name and os-version command line options
  * Add computer-name support to realmd join CLI and config
