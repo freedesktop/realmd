@@ -86,7 +86,7 @@ $(DBUS_ESCAPED): $(DBUS_INTERFACE) doc/manual/escape-xml-to-text.xsl
 		$(srcdir)/doc/manual/escape-xml-to-text.xsl $< && \
 	sed -i '/^[	 ]*$$/d' $(DBUS_ESCAPED)
 
-manual/index.html: $(DBUS_DOC_GENERATED) $(MANUAL_DOCBOOK) $(MANUAL_INCLUDES) $(MAN_IN_FILES) $(DBUS_ESCAPED) $(MANUAL_STATIC)
+manual/index.html: $(DBUS_DOC_GENERATED) $(MANUAL_DOCBOOK) $(MANUAL_INCLUDES) $(MAN_IN_FILES) $(DBUS_ESCAPED) $(MANUAL_STATIC) doc/privatedir.xml
 	$(AM_V_GEN) mkdir -p manual && cp $(srcdir)/doc/manual/static/* manual/ && \
 	$(XMLTO) html -m $(srcdir)/doc/manual/gtk-doc.xsl -o manual \
 		--searchpath $(abs_builddir):$(abs_srcdir):$(abs_builddir)/doc \
