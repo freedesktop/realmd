@@ -3,15 +3,15 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
-# Adolfo Jayme Barrientos, 2013
-# Adolfo Jayme Barrientos, 2013
-# Daniel Mustieles <daniel.mustieles@gmail.com>, 2013
+# Adolfo Jayme-Barrientos, 2013
+# Adolfo Jayme-Barrientos, 2013
+# 0f759dd1ea6c4c76cedc299039ca4f23_7584d04 <454cc45058db9632179dc8079c0c1af3_5311>, 2013
 msgid ""
 msgstr ""
 "Project-Id-Version: realmd\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-10-19 11:43+0200\n"
-"PO-Revision-Date: 2015-10-20 19:12+0000\n"
+"PO-Revision-Date: 2017-09-19 15:03+0000\n"
 "Last-Translator: Stef Walter <stefw@gnome.org>\n"
 "Language-Team: Spanish (http://www.transifex.com/freedesktop/realmd/language/es/)\n"
 "MIME-Version: 1.0\n"

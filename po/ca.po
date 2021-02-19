@@ -3,14 +3,16 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
+# Antoni Bella Pérez <antonibella5@yahoo.com>, 2019
+# Robert Antoni Buj Gelonch <rbuj@fedoraproject.org>, 2017
 # Robert Antoni Buj Gelonch <rbuj@fedoraproject.org>, 2015
 msgid ""
 msgstr ""
 "Project-Id-Version: realmd\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-10-19 11:43+0200\n"
-"PO-Revision-Date: 2015-12-09 23:43+0000\n"
-"Last-Translator: Robert Antoni Buj Gelonch <rbuj@fedoraproject.org>\n"
+"PO-Revision-Date: 2019-09-29 17:16+0000\n"
+"Last-Translator: Antoni Bella Pérez <antonibella5@yahoo.com>\n"
 "Language-Team: Catalan (http://www.transifex.com/freedesktop/realmd/language/ca/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -91,7 +93,7 @@ msgstr "En aquest sistema, LDAP no accepta les connexions UDP"
 #: ../service/realm-sssd-ad.c:309 ../service/realm-sssd-ipa.c:318
 #, c-format
 msgid "Unsupported or unknown membership software '%s'"
-msgstr "Programari de membres no compatible o desconegut '%s'"
+msgstr "Programari de membres no compatible o desconegut «%s»"
 
 #: ../service/realm-example.c:170 ../service/realm-samba.c:282
 msgid "Already joined to a domain"
@@ -369,7 +371,7 @@ msgstr "No s'ha pogut crear el fitxer de memòria cau de les credencials: %s: %s
 
 #: ../tools/realm-client.c:585
 msgid "Couldn't resolve credential cache"
-msgstr "No s'ha pogut resoldre la cau de les credencials"
+msgstr "No s'ha pogut resoldre la memòria cau de les credencials"
 
 #: ../tools/realm-client.c:675
 #, c-format
@@ -388,7 +390,7 @@ msgstr "No s'ha pogut analitzar sintàcticament el nom d'usuari: %s"
 
 #: ../tools/realm-client.c:728
 msgid "Couldn't read credential cache"
-msgstr "No s'ha pogut llegir la cau de les credencials"
+msgstr "No s'ha pogut llegir la memòria cau de les credencials"
 
 #: ../tools/realm-client.c:754 ../tools/realm-client.c:961
 msgid "Couldn't initialize kerberos"
@@ -515,7 +517,7 @@ msgstr "Especifica un reialme a unir-se"
 #: ../tools/realm-join.c:324
 msgid ""
 "The --no-password argument cannot be used with --one-time-password or --user"
-msgstr "L'argument --no-password no pot utilitza-se amb --one-time-password o --user"
+msgstr "L'argument --no-password no pot utilitzar-se amb --one-time-password o --user"
 
 #: ../tools/realm-join.c:329
 msgid "The --one-time-password argument cannot be used with --user"

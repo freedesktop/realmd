@@ -7,13 +7,13 @@
 # Shinjo Park <kde@peremen.name>, 2015
 # Seong-ho Cho <darkcircle.0426@gmail.com>, 2013,2015
 # Shinjo Park <kde@peremen.name>, 2015
-# Sungjin Kang <potopro@gmail.com>, 2014
+# Thomas Sungjin Kang <potopro@gmail.com>, 2014
 msgid ""
 msgstr ""
 "Project-Id-Version: realmd\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-10-19 11:43+0200\n"
-"PO-Revision-Date: 2015-10-26 04:02+0000\n"
+"PO-Revision-Date: 2017-09-19 16:43+0000\n"
 "Last-Translator: Seong-ho Cho <darkcircle.0426@gmail.com>\n"
 "Language-Team: Korean (http://www.transifex.com/freedesktop/realmd/language/ko/)\n"
 "MIME-Version: 1.0\n"

@@ -1,90 +1,91 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# 
+#
 # Translators:
+# Fabio Tomat <f.t.public@gmail.com>, 2017
 msgid ""
 msgstr ""
 "Project-Id-Version: realmd\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-10-19 11:43+0200\n"
-"PO-Revision-Date: 2015-10-20 19:12+0000\n"
-"Last-Translator: Stef Walter <stefw@gnome.org>\n"
-"Language-Team: Kazakh (http://www.transifex.com/freedesktop/realmd/language/kk/)\n"
+"PO-Revision-Date: 2017-12-24 13:48+0000\n"
+"Last-Translator: Fabio Tomat <f.t.public@gmail.com>\n"
+"Language-Team: Friulian (http://www.transifex.com/freedesktop/realmd/language/fur/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: kk\n"
-"Plural-Forms: nplurals=2; plural=(n!=1);\n"
+"Language: fur\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: ../service/org.freedesktop.realmd.policy.in.h:1
 msgid "Discover realm"
-msgstr ""
+msgstr "Scuvierç ream"
 
 #: ../service/org.freedesktop.realmd.policy.in.h:2
 msgid "Authentication is required to discover a kerberos realm"
-msgstr ""
+msgstr "La autenticazion e je necessarie par scuvierzi un ream kerberos"
 
 #: ../service/org.freedesktop.realmd.policy.in.h:3
 msgid "Join machine to realm"
-msgstr ""
+msgstr "Zonte machine al ream"
 
 #: ../service/org.freedesktop.realmd.policy.in.h:4
 msgid "Authentication is required to join this machine to a realm or domain"
-msgstr ""
+msgstr "La autenticazion e je necessarie par zontâ cheste machine suntun ream o domini"
 
 #: ../service/org.freedesktop.realmd.policy.in.h:5
 msgid "Remove machine from realm"
-msgstr ""
+msgstr "Gjave machine dal ream"
 
 #: ../service/org.freedesktop.realmd.policy.in.h:6
 msgid ""
 "Authentication is required to remove this computer from a realm or domain."
-msgstr ""
+msgstr "La autenticazion e je necessarie par gjavâ chest computer di un ream o domini."
 
 #: ../service/org.freedesktop.realmd.policy.in.h:7
 msgid "Change login policy"
-msgstr ""
+msgstr "Cambie politiche di acès"
 
 #: ../service/org.freedesktop.realmd.policy.in.h:8
 msgid ""
 "Authentication is required to change the policy of who can log in on this "
 "computer."
-msgstr ""
+msgstr "La autenticazion e je necessarie pa cambiâ la politiche di cui che al pues jentrâ su chest computer."
 
 #: ../service/realm-command.c:347
 #, c-format
 msgid "Process was terminated with signal: %d"
-msgstr ""
+msgstr "Il procès al è terminât cul segnâl: %d"
 
 #: ../service/realm-command.c:396 ../service/realm-ldap.c:349
 #, c-format
 msgid "The operation was cancelled"
-msgstr ""
+msgstr "La operazion e je stade anulade"
 
 #: ../service/realm-command.c:573
 #, c-format
 msgid "Configured command not found: %s"
-msgstr ""
+msgstr "Comant configurât no cjatât: %s"
 
 #: ../service/realm-command.c:578
 #, c-format
 msgid "Skipped command: %s"
-msgstr ""
+msgstr "Comant saltât: %s"
 
 #: ../service/realm-command.c:584
 #, c-format
 msgid "Configured command invalid: %s"
-msgstr ""
+msgstr "Comant configurât no valit: %s"
 
 #: ../service/realm-disco-mscldap.c:198
 #, c-format
 msgid "Received invalid or unsupported Netlogon data from server"
-msgstr ""
+msgstr "Si à vût, dal servidôr, dâts Netlogon no valits o no supuartâts"
 
 #: ../service/realm-disco-mscldap.c:346
 msgid "LDAP on this system does not support UDP connections"
-msgstr ""
+msgstr "Il LDAP su chest sisteme nol supuarte lis conessions UDP"
 
 #: ../service/realm-example.c:82 ../service/realm-samba.c:247
 #: ../service/realm-sssd-ad.c:309 ../service/realm-sssd-ipa.c:318
@@ -94,20 +95,20 @@ msgstr ""
 
 #: ../service/realm-example.c:170 ../service/realm-samba.c:282
 msgid "Already joined to a domain"
-msgstr ""
+msgstr "Za zontât suntun domini"
 
 #: ../service/realm-example.c:178 ../service/realm-example.c:271
 msgid "Admin name or password is not valid"
-msgstr ""
+msgstr "Non aministradôr o password no valits"
 
 #: ../service/realm-example.c:242 ../service/realm-samba.c:422
 #: ../service/realm-sssd-ad.c:514
 msgid "Not currently joined to this domain"
-msgstr ""
+msgstr "Atualmentri no zontât su chest domini"
 
 #: ../service/realm-example.c:301
 msgid "Need credentials for leaving this domain"
-msgstr ""
+msgstr "A coventin credenziâls par jessi di chest domini"
 
 #: ../service/realm-ini-config.c:736
 #, c-format
@@ -116,40 +117,40 @@ msgstr ""
 
 #: ../service/realm-invocation.c:536
 msgid "Not authorized to perform this action"
-msgstr ""
+msgstr "No si è autorizâts par fâ cheste azion"
 
 #: ../service/realm-kerberos.c:130 ../service/realm-kerberos.c:208
 #: ../service/realm-provider.c:156
 msgid "Operation was cancelled."
-msgstr ""
+msgstr "La operazion e je stade anulade."
 
 #: ../service/realm-kerberos.c:135
 msgid "Failed to enroll machine in realm. See diagnostics."
-msgstr ""
+msgstr "No si è rivâts a iscrivi la machine tal ream. Viodi la diagnostiche."
 
 #: ../service/realm-kerberos.c:213
 msgid "Failed to unenroll machine from domain. See diagnostics."
-msgstr ""
+msgstr "No si è rivâts a gjavâ la iscrizion de machine dal ream. Viodi la diagnostiche."
 
 #: ../service/realm-kerberos.c:272
 msgid "Joining this realm without credentials is not supported"
-msgstr ""
+msgstr "Il zontâsi su chest ream cence credenziâls nol è supuartât"
 
 #: ../service/realm-kerberos.c:273
 msgid "Leaving this realm without credentials is not supported"
-msgstr ""
+msgstr "Il lassâ chest ream cence credenziâls nol è supuartât"
 
 #: ../service/realm-kerberos.c:276
 msgid "Joining this realm using a credential cache is not supported"
-msgstr ""
+msgstr "Il zontâsi su chest ream doprant une cache di credenziâl nol è supuartât"
 
 #: ../service/realm-kerberos.c:277
 msgid "Leaving this realm using a credential cache is not supported"
-msgstr ""
+msgstr "Il lassâ chest ream doprant une cache di credenziâl nol è supuartât"
 
 #: ../service/realm-kerberos.c:280
 msgid "Joining this realm using a secret is not supported"
-msgstr ""
+msgstr "Il zontâsi su chest ream doprant un segret nol è supuartât"
 
 #: ../service/realm-kerberos.c:281
 msgid "Unenrolling this realm using a secret is not supported"
@@ -173,12 +174,12 @@ msgstr ""
 
 #: ../service/realm-kerberos.c:332 ../service/realm-kerberos.c:504
 msgid "Already running another action"
-msgstr ""
+msgstr "Za in esecuzione une altre azion"
 
 #: ../service/realm-kerberos.c:375
 #, c-format
 msgid "Already joined to another domain: %s"
-msgstr ""
+msgstr "Za zontât suntun altri domini: %s"
 
 #: ../service/realm-kerberos.c:446
 msgid "Failed to change permitted logins. See diagnostics."
@@ -202,7 +203,7 @@ msgstr ""
 #: ../service/realm-packages.c:471 ../service/realm-packages.c:508
 #, c-format
 msgid "Necessary packages are not installed: %s"
-msgstr ""
+msgstr "I pachets necessaris no son instalâts: %s"
 
 #. * Various people have been worried by installing packages
 #. * quietly, so notify about what's going on.
@@ -213,7 +214,7 @@ msgstr ""
 #. * worried, remove realmd and do stuff manually.
 #: ../service/realm-packages.c:477 ../tools/realm-client.c:143
 msgid "Installing necessary packages"
-msgstr ""
+msgstr "Daûr a instalâ i pachets necessaris"
 
 #: ../service/realm-provider.c:161
 msgid "Failed to discover realm. See diagnostics."
@@ -222,7 +223,7 @@ msgstr ""
 #: ../service/realm-samba.c:467
 #, c-format
 msgid "Not joined to this domain"
-msgstr ""
+msgstr "No zontât su chest domini"
 
 #: ../service/realm-samba.c:477 ../service/realm-samba.c:519
 #, c-format
@@ -242,7 +243,7 @@ msgstr ""
 #: ../service/realm-sssd-ad.c:240
 #, c-format
 msgid "Unable to automatically join the domain"
-msgstr ""
+msgstr "Impussibil zontâsi in automatic sul domini"
 
 #: ../service/realm-sssd-ad.c:326
 #, c-format
@@ -266,21 +267,21 @@ msgstr ""
 #: ../service/realm-sssd-ad.c:398 ../service/realm-sssd-ipa.c:322
 #: ../tools/realm-join.c:236
 msgid "Already joined to this domain"
-msgstr ""
+msgstr "Za zontât su chest domini"
 
 #: ../service/realm-sssd-ad.c:402 ../service/realm-sssd-ipa.c:326
 msgid "A domain with this name is already configured"
-msgstr ""
+msgstr "Un domini cun chest non al è za configurât"
 
 #: ../service/realm-sssd-config.c:145
 #, c-format
 msgid "Already have domain %s in sssd.conf config file"
-msgstr ""
+msgstr "Si à za il domini %s tal file di configurazion sssd.conf"
 
 #: ../service/realm-sssd-config.c:190
 #, c-format
 msgid "Don't have domain %s in sssd.conf config file"
-msgstr ""
+msgstr "No si à il domini %s tal file di configurazion sssd.conf"
 
 #: ../service/realm-sssd-ipa.c:312
 msgid "The computer-ou argument is not supported when joining an IPA domain."
@@ -288,7 +289,7 @@ msgstr ""
 
 #: ../service/realm-sssd-ipa.c:480
 msgid "Not currently joined to this realm"
-msgstr ""
+msgstr "Atualmentri no zontât su chest ream"
 
 #: ../tools/realm.c:40
 msgid "Discover available realm"
@@ -296,15 +297,15 @@ msgstr ""
 
 #: ../tools/realm.c:41
 msgid "Enroll this machine in a realm"
-msgstr ""
+msgstr "Iscrîf cheste machine intun ream"
 
 #: ../tools/realm.c:42
 msgid "Unenroll this machine from a realm"
-msgstr ""
+msgstr "Gjave iscrizion di cheste machine di un ream"
 
 #: ../tools/realm.c:43
 msgid "List known realms"
-msgstr ""
+msgstr "Liste i reams cognossûts"
 
 #: ../tools/realm.c:44
 msgid "Permit user logins"
@@ -325,7 +326,7 @@ msgstr ""
 
 #: ../tools/realm.c:217
 msgid "Verbose output"
-msgstr ""
+msgstr "Jessude prolisse"
 
 #: ../tools/realm.c:218
 msgid "Do not prompt for input"
@@ -333,15 +334,15 @@ msgstr ""
 
 #: ../tools/realm-client.c:193 ../tools/realm-client.c:203
 msgid "Couldn't connect to realm service"
-msgstr ""
+msgstr "Impussibil conetisi al servizi di ream"
 
 #: ../tools/realm-client.c:232
 msgid "Couldn't load the realm service"
-msgstr ""
+msgstr "Impussibil cjariâ il servizi di ream"
 
 #: ../tools/realm-client.c:249
 msgid "Couldn't connect to system bus"
-msgstr ""
+msgstr "Impussibil conetisi al bus di sisteme"
 
 #: ../tools/realm-client.c:279
 #, c-format
@@ -350,11 +351,11 @@ msgstr ""
 
 #: ../tools/realm-client.c:287 ../tools/realm-client.c:319
 msgid "Couldn't create socket"
-msgstr ""
+msgstr "Impussibil creâ il socket"
 
 #: ../tools/realm-client.c:300
 msgid "Couldn't run realmd"
-msgstr ""
+msgstr "Impussibil eseguî realmd"
 
 #: ../tools/realm-client.c:565
 #, c-format
@@ -373,12 +374,12 @@ msgstr ""
 #: ../tools/realm-client.c:675
 #, c-format
 msgid "Invalid password for %s"
-msgstr ""
+msgstr "Password no valide par %s"
 
 #: ../tools/realm-client.c:679
 #, c-format
 msgid "Couldn't authenticate as %s"
-msgstr ""
+msgstr "Impussibil autenticâs come %s"
 
 #: ../tools/realm-client.c:704
 #, c-format
@@ -401,7 +402,7 @@ msgstr ""
 #: ../tools/realm-client.c:821
 #, c-format
 msgid "Password for %s: "
-msgstr ""
+msgstr "Password par %s:"
 
 #: ../tools/realm-client.c:839
 #, c-format
@@ -450,12 +451,12 @@ msgstr ""
 
 #: ../tools/realm-discover.c:182 ../tools/realm-discover.c:273
 msgid "Show only the names"
-msgstr ""
+msgstr "Mostre dome i nons"
 
 #: ../tools/realm-discover.c:183 ../tools/realm-join.c:287
 #: ../tools/realm-leave.c:266
 msgid "Use specific client software"
-msgstr ""
+msgstr "Dopre un software client specific"
 
 #: ../tools/realm-discover.c:184 ../tools/realm-join.c:291
 msgid "Use specific membership software"
@@ -464,20 +465,20 @@ msgstr ""
 #: ../tools/realm-discover.c:185 ../tools/realm-join.c:289
 #: ../tools/realm-leave.c:269
 msgid "Use specific server software"
-msgstr ""
+msgstr "Dopre un software servidôr specific"
 
 #: ../tools/realm-discover.c:272
 msgid "Show all realms"
-msgstr ""
+msgstr "Mostre ducj i reams"
 
 #: ../tools/realm-join.c:92 ../tools/realm-join.c:132
 #: ../tools/realm-join.c:163
 msgid "Couldn't join realm"
-msgstr ""
+msgstr "Impussibil zontâsi al ream"
 
 #: ../tools/realm-join.c:227
 msgid "Cannot join this realm"
-msgstr ""
+msgstr "Impussibil zontâsi su chest ream"
 
 #: ../tools/realm-join.c:229
 msgid "No such realm found"
@@ -485,7 +486,7 @@ msgstr ""
 
 #: ../tools/realm-join.c:283
 msgid "User name to use for enrollment"
-msgstr ""
+msgstr "Non utent di doprâ pe iscrizion"
 
 #: ../tools/realm-join.c:285
 msgid "Computer OU DN to join"
@@ -493,7 +494,7 @@ msgstr ""
 
 #: ../tools/realm-join.c:293
 msgid "Join automatically without a password"
-msgstr ""
+msgstr "Zontâsi in automatic cence password"
 
 #: ../tools/realm-join.c:295
 msgid "Join using a preset one time password"

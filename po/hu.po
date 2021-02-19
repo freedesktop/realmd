@@ -1,24 +1,24 @@
-# Hungarian translation for realmd.
-# Copyright (C) 2014, 2016, 2019 Free Software Foundation, Inc.
-# This file is distributed under the same license as the realmd package.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
 #
-# Balázs Úr <ur.balazs at fsf dot hu>, 2014, 2019.
-# Gabor Kelemen <kelemeng at ubuntu dot com>, 2016.
+# Translators:
+# Balázs Úr <ur.balazs at fsf dot hu>, 2014,2019
+# Balázs Úr, 2014
+# Gabor Kelemen <kelemeng at ubuntu dot com>, 2016
 msgid ""
 msgstr ""
 "Project-Id-Version: realmd\n"
-"Report-Msgid-Bugs-To: https://bugs.freedesktop.org/enter_bug.cgi?product=realm"
-"d&keywords=I18N+L10N&component=General\n"
-"POT-Creation-Date: 2019-01-23 20:04+0000\n"
-"PO-Revision-Date: 2019-02-13 20:09+0100\n"
-"Last-Translator: Balázs Úr <ur.balazs at fsf dot hu>\n"
-"Language-Team: Hungarian <gnome-hu-list at gnome dot org>\n"
-"Language: hu\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-10-19 11:43+0200\n"
+"PO-Revision-Date: 2019-02-13 19:11+0000\n"
+"Last-Translator: Balázs Úr\n"
+"Language-Team: Hungarian (http://www.transifex.com/freedesktop/realmd/language/hu/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: hu\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 2.0\n"
 
 #: ../service/org.freedesktop.realmd.policy.in.h:1
 msgid "Discover realm"
@@ -53,31 +53,29 @@ msgstr "Bejelentkezési házirend módosítása"
 msgid ""
 "Authentication is required to change the policy of who can log in on this "
 "computer."
-msgstr ""
-"Hitelesítés szükséges a házirend módosításához, hogy ki jelentkezhet be erre "
-"a számítógépre."
+msgstr "Hitelesítés szükséges a házirend módosításához, hogy ki jelentkezhet be erre a számítógépre."
 
 #: ../service/realm-command.c:347
 #, c-format
 msgid "Process was terminated with signal: %d"
 msgstr "A folyamat a következő szignállal fejeződött be: %d"
 
-#: ../service/realm-command.c:400 ../service/realm-ldap.c:350
+#: ../service/realm-command.c:396 ../service/realm-ldap.c:349
 #, c-format
 msgid "The operation was cancelled"
 msgstr "A művelet megszakítva"
 
-#: ../service/realm-command.c:577
+#: ../service/realm-command.c:573
 #, c-format
 msgid "Configured command not found: %s"
 msgstr "Nem található beállított parancs: %s"
 
-#: ../service/realm-command.c:582
+#: ../service/realm-command.c:578
 #, c-format
 msgid "Skipped command: %s"
 msgstr "Kihagyott parancs: %s"
 
-#: ../service/realm-command.c:588
+#: ../service/realm-command.c:584
 #, c-format
 msgid "Configured command invalid: %s"
 msgstr "A beállított parancs érvénytelen: %s"
@@ -91,13 +89,13 @@ msgstr "Érvénytelen vagy nem támogatott Netlogon adat érkezett a kiszolgál�
 msgid "LDAP on this system does not support UDP connections"
 msgstr "Az ezen a rendszeren lévő LDAP nem támogatja az UDP kapcsolatokat"
 
-#: ../service/realm-example.c:82 ../service/realm-samba.c:252
-#: ../service/realm-sssd-ad.c:316 ../service/realm-sssd-ipa.c:300
+#: ../service/realm-example.c:82 ../service/realm-samba.c:247
+#: ../service/realm-sssd-ad.c:309 ../service/realm-sssd-ipa.c:318
 #, c-format
 msgid "Unsupported or unknown membership software '%s'"
 msgstr "Nem támogatott vagy ismeretlen tagsági szoftver: „%s”"
 
-#: ../service/realm-example.c:170 ../service/realm-samba.c:287
+#: ../service/realm-example.c:170 ../service/realm-samba.c:282
 msgid "Already joined to a domain"
 msgstr "Már csatlakozott egy tartományhoz"
 
@@ -105,8 +103,8 @@ msgstr "Már csatlakozott egy tartományhoz"
 msgid "Admin name or password is not valid"
 msgstr "Az adminisztrátor neve vagy jelszava nem érvényes"
 
-#: ../service/realm-example.c:242 ../service/realm-samba.c:427
-#: ../service/realm-sssd-ad.c:521
+#: ../service/realm-example.c:242 ../service/realm-samba.c:422
+#: ../service/realm-sssd-ad.c:514
 msgid "Not currently joined to this domain"
 msgstr "Jelenleg nincs csatlakozva ehhez a tartományhoz"
 
@@ -124,103 +122,91 @@ msgid "Not authorized to perform this action"
 msgstr "Nincs felhatalmazva a művelet végrehajtására"
 
 #: ../service/realm-kerberos.c:130 ../service/realm-kerberos.c:208
-#: ../service/realm-provider.c:158
+#: ../service/realm-provider.c:156
 msgid "Operation was cancelled."
 msgstr "A művelet megszakítva."
 
 #: ../service/realm-kerberos.c:135
 msgid "Failed to enroll machine in realm. See diagnostics."
-msgstr ""
-"Nem sikerült a gép bejegyzése a tartományba. Nézze meg a diagnosztikát."
+msgstr "Nem sikerült a gép bejegyzése a tartományba. Nézze meg a diagnosztikát."
 
 #: ../service/realm-kerberos.c:213
 msgid "Failed to unenroll machine from domain. See diagnostics."
-msgstr ""
-"Nem sikerült a gép bejegyzésének törlése a tartományból. Nézze meg a "
-"diagnosztikát."
+msgstr "Nem sikerült a gép bejegyzésének törlése a tartományból. Nézze meg a diagnosztikát."
 
-#: ../service/realm-kerberos.c:273
+#: ../service/realm-kerberos.c:272
 msgid "Joining this realm without credentials is not supported"
 msgstr "A tartományba csatlakozás hitelesítési adatok nélkül nem támogatott"
 
-#: ../service/realm-kerberos.c:274
+#: ../service/realm-kerberos.c:273
 msgid "Leaving this realm without credentials is not supported"
 msgstr "A tartomány elhagyása hitelesítési adatok nélkül nem támogatott"
 
-#: ../service/realm-kerberos.c:277
+#: ../service/realm-kerberos.c:276
 msgid "Joining this realm using a credential cache is not supported"
-msgstr ""
-"A tartományba csatlakozás hitelesítési adatok gyorsítótárának használatával "
-"nem támogatott"
+msgstr "A tartományba csatlakozás hitelesítési adatok gyorsítótárának használatával nem támogatott"
 
-#: ../service/realm-kerberos.c:278
+#: ../service/realm-kerberos.c:277
 msgid "Leaving this realm using a credential cache is not supported"
-msgstr ""
-"A tartomány elhagyása hitelesítési adatok gyorsítótárának használatával nem "
-"támogatott"
+msgstr "A tartomány elhagyása hitelesítési adatok gyorsítótárának használatával nem támogatott"
 
-#: ../service/realm-kerberos.c:281
+#: ../service/realm-kerberos.c:280
 msgid "Joining this realm using a secret is not supported"
 msgstr "A tartományba csatlakozás titok használatával nem támogatott"
 
-#: ../service/realm-kerberos.c:282
+#: ../service/realm-kerberos.c:281
 msgid "Unenrolling this realm using a secret is not supported"
 msgstr "A tartomány bejegyzésének törlése titok használatával nem támogatott"
 
-#: ../service/realm-kerberos.c:285
+#: ../service/realm-kerberos.c:284
 msgid "Enrolling this realm using a password is not supported"
 msgstr "A tartományba bejegyzés jelszó használatával nem támogatott"
 
-#: ../service/realm-kerberos.c:286
+#: ../service/realm-kerberos.c:285
 msgid "Unenrolling this realm using a password is not supported"
 msgstr "A tartomány bejegyzésének törlése jelszó használatával nem támogatott"
 
-#: ../service/realm-kerberos.c:312
+#: ../service/realm-kerberos.c:311
 msgid "Joining this realm is not supported"
 msgstr "A tartományba csatlakozás nem támogatott"
 
-#: ../service/realm-kerberos.c:313
+#: ../service/realm-kerberos.c:312
 msgid "Leaving this realm is not supported"
 msgstr "A tartomány elhagyása nem támogatott"
 
-#: ../service/realm-kerberos.c:333 ../service/realm-kerberos.c:505
+#: ../service/realm-kerberos.c:332 ../service/realm-kerberos.c:504
 msgid "Already running another action"
 msgstr "Már fut egy másik művelet"
 
-#: ../service/realm-kerberos.c:376
+#: ../service/realm-kerberos.c:375
 #, c-format
 msgid "Already joined to another domain: %s"
 msgstr "Már csatlakozott egy másik tartományhoz: %s"
 
-#: ../service/realm-kerberos.c:447
+#: ../service/realm-kerberos.c:446
 msgid "Failed to change permitted logins. See diagnostics."
-msgstr ""
-"Nem sikerült az engedélyezett bejelentkezések módosítása. Nézze meg a "
-"diagnosztikát."
+msgstr "Nem sikerült az engedélyezett bejelentkezések módosítása. Nézze meg a diagnosztikát."
 
-#: ../service/realm-kerberos.c:748
+#: ../service/realm-kerberos.c:747
 #, c-format
 msgid "The realm does not allow specifying logins"
 msgstr "A tartomány nem engedélyezi a bejelentkezések megadását"
 
-#: ../service/realm-kerberos.c:756
+#: ../service/realm-kerberos.c:755
 #, c-format
 msgid "Invalid login argument%s%s%s does not match the login format."
-msgstr ""
-"Érvénytelen bejelentkezési argumentum: %s%s%s nem felel meg a bejelentkezési "
-"formátumnak."
+msgstr "Érvénytelen bejelentkezési argumentum: %s%s%s nem felel meg a bejelentkezési formátumnak."
 
 #: ../service/realm-packages.c:389
 #, c-format
 msgid "The following packages are not available for installation: %s"
 msgstr "A következő csomagok nem telepíthetők: %s"
 
-#: ../service/realm-packages.c:471 ../service/realm-packages.c:506
+#: ../service/realm-packages.c:471 ../service/realm-packages.c:508
 #, c-format
 msgid "Necessary packages are not installed: %s"
 msgstr "A szükséges csomagok nincsenek telepítve: %s"
 
-#.
 #. * Various people have been worried by installing packages
 #. * quietly, so notify about what's going on.
 #. *
@@ -228,91 +214,82 @@ msgstr "A szükséges csomagok nincsenek telepítve: %s"
 #. * more worrisome than the installation. It's realmd's job
 #. * to configure, enable and start stuff. So if you're properly
 #. * worried, remove realmd and do stuff manually.
-#.
 #: ../service/realm-packages.c:477 ../tools/realm-client.c:143
 msgid "Installing necessary packages"
 msgstr "Szükséges csomagok telepítése"
 
-#: ../service/realm-provider.c:163
+#: ../service/realm-provider.c:161
 msgid "Failed to discover realm. See diagnostics."
 msgstr "Nem sikerült a tartomány felderítése. Nézze meg a diagnosztikát."
 
-#: ../service/realm-samba.c:472
+#: ../service/realm-samba.c:467
 #, c-format
 msgid "Not joined to this domain"
 msgstr "Nem csatlakozott ehhez a tartományhoz"
 
-#: ../service/realm-samba.c:482 ../service/realm-samba.c:524
+#: ../service/realm-samba.c:477 ../service/realm-samba.c:519
 #, c-format
 msgid "The Samba provider cannot restrict permitted logins."
-msgstr ""
-"A Samba szolgáltató nem korlátozhatja az engedélyezett bejelentkezéseket."
+msgstr "A Samba szolgáltató nem korlátozhatja az engedélyezett bejelentkezéseket."
 
 #: ../service/realm-sssd.c:130
 #, c-format
 msgid "Invalid login argument '%s' contains unsupported characters."
-msgstr ""
-"Érvénytelen bejelentkezési argumentum: „%s”. Nem támogatott karaktereket "
-"tartalmaz."
+msgstr "Érvénytelen bejelentkezési argumentum: „%s”. Nem támogatott karaktereket tartalmaz."
 
-#: ../service/realm-sssd-ad.c:126
+#: ../service/realm-sssd-ad.c:126 ../service/realm-sssd-ipa.c:124
 #, c-format
 msgid "Enabling SSSD in nsswitch.conf and PAM failed."
 msgstr "Az SSSD engedélyezése az nsswitch.conf-ban és a PAM-ban meghiúsult."
 
-#: ../service/realm-sssd-ad.c:247
+#: ../service/realm-sssd-ad.c:240
 #, c-format
 msgid "Unable to automatically join the domain"
 msgstr "Nem lehet automatikusan csatlakozni a tartományba"
 
-#: ../service/realm-sssd-ad.c:333
+#: ../service/realm-sssd-ad.c:326
 #, c-format
 msgid ""
 "Joining a domain with a one time password is only supported with the '%s' "
 "membership software"
-msgstr ""
-"Tartományhoz csatlakozás egyszeri jelszóval csak a(z) „%s” tagsági "
-"szoftverrel támogatott"
+msgstr "Tartományhoz csatlakozás egyszeri jelszóval csak a(z) „%s” tagsági szoftverrel támogatott"
 
-#: ../service/realm-sssd-ad.c:347
+#: ../service/realm-sssd-ad.c:340
 #, c-format
 msgid ""
 "Joining a domain with a user password is only supported with the '%s' "
 "membership software"
-msgstr ""
-"Tartományhoz csatlakozás felhasználói jelszóval csak a(z) „%s” tagsági "
-"szoftverrel támogatott"
+msgstr "Tartományhoz csatlakozás felhasználói jelszóval csak a(z) „%s” tagsági szoftverrel támogatott"
 
-#: ../service/realm-sssd-ad.c:363
+#: ../service/realm-sssd-ad.c:356
 #, c-format
 msgid "Unsupported credentials for joining a domain"
 msgstr "Nem támogatott hitelesítési adatok a tartományhoz csatlakozáshoz"
 
-#: ../service/realm-sssd-ad.c:405 ../service/realm-sssd-ipa.c:304
-#: ../tools/realm-join.c:240
+#: ../service/realm-sssd-ad.c:398 ../service/realm-sssd-ipa.c:322
+#: ../tools/realm-join.c:236
 msgid "Already joined to this domain"
 msgstr "Már csatlakozott ehhez a tartományhoz"
 
-#: ../service/realm-sssd-ad.c:409 ../service/realm-sssd-ipa.c:308
+#: ../service/realm-sssd-ad.c:402 ../service/realm-sssd-ipa.c:326
 msgid "A domain with this name is already configured"
 msgstr "Már be van állítva egy tartomány ezzel a névvel"
 
-#: ../service/realm-sssd-config.c:149
+#: ../service/realm-sssd-config.c:145
 #, c-format
 msgid "Already have domain %s in sssd.conf config file"
 msgstr "Az sssd.conf beállítófájl már tartalmazza ezt a tartományt: %s"
 
-#: ../service/realm-sssd-config.c:198
+#: ../service/realm-sssd-config.c:190
 #, c-format
 msgid "Don't have domain %s in sssd.conf config file"
 msgstr "Az sssd.conf beállítófájl nem tartalmazza ezt a tartományt: %s"
 
-#: ../service/realm-sssd-ipa.c:294
+#: ../service/realm-sssd-ipa.c:312
 msgid "The computer-ou argument is not supported when joining an IPA domain."
-msgstr ""
-"A computer-ou argumentum nem támogatott IPA tartományhoz csatlakozáshoz."
+msgstr "A computer-ou argumentum nem támogatott IPA tartományhoz csatlakozáshoz."
 
-#: ../service/realm-sssd-ipa.c:462
+#: ../service/realm-sssd-ipa.c:480
 msgid "Not currently joined to this realm"
 msgstr "Jelenleg nincs csatlakozva ehhez a tartományhoz"
 
@@ -340,20 +317,20 @@ msgstr "Felhasználói bejelentkezések engedélyezése"
 msgid "Deny user logins"
 msgstr "Felhasználói bejelentkezések tiltása"
 
-#: ../tools/realm.c:182
+#: ../tools/realm.c:184
 #, c-format
 msgid "Invalid value for %s option: %s"
 msgstr "Érvénytelen érték a(z) %s kapcsolóhoz: %s"
 
-#: ../tools/realm.c:214
+#: ../tools/realm.c:216
 msgid "Install mode to a specific prefix"
 msgstr "Telepítési mód egy konkrét előtaghoz"
 
-#: ../tools/realm.c:215
+#: ../tools/realm.c:217
 msgid "Verbose output"
 msgstr "Részletes kimenet"
 
-#: ../tools/realm.c:216
+#: ../tools/realm.c:218
 msgid "Do not prompt for input"
 msgstr "Ne kérjen adatbevitelt"
 
@@ -365,94 +342,94 @@ msgstr "Nem lehet csatlakozni a tartományszolgáltatáshoz"
 msgid "Couldn't load the realm service"
 msgstr "Nem lehet betölteni a tartományszolgáltatást"
 
-#: ../tools/realm-client.c:251
+#: ../tools/realm-client.c:249
 msgid "Couldn't connect to system bus"
 msgstr "Nem sikerült a rendszerbuszhoz kapcsolódni"
 
-#: ../tools/realm-client.c:281
+#: ../tools/realm-client.c:279
 #, c-format
 msgid "Couldn't create socket pair: %s"
 msgstr "A socketpár létrehozása sikertelen: %s"
 
-#: ../tools/realm-client.c:289 ../tools/realm-client.c:321
+#: ../tools/realm-client.c:287 ../tools/realm-client.c:319
 msgid "Couldn't create socket"
 msgstr "A socket létrehozása sikertelen"
 
-#: ../tools/realm-client.c:302
+#: ../tools/realm-client.c:300
 msgid "Couldn't run realmd"
 msgstr "A realmd nem futtatható"
 
-#: ../tools/realm-client.c:567
+#: ../tools/realm-client.c:565
 #, c-format
 msgid "Couldn't create runtime directory: %s: %s"
 msgstr "Nem hozható létre a futtatókörnyezet „%s” könyvtára: %s"
 
-#: ../tools/realm-client.c:577
+#: ../tools/realm-client.c:575
 #, c-format
 msgid "Couldn't create credential cache file: %s: %s"
 msgstr "Nem hozható létre a hitelesítési adatok gyorsítótárfájlja: %s: %s"
 
-#: ../tools/realm-client.c:587
+#: ../tools/realm-client.c:585
 msgid "Couldn't resolve credential cache"
 msgstr "Nem oldható fel a hitelesítési adatok gyorsítótára"
 
-#: ../tools/realm-client.c:677
+#: ../tools/realm-client.c:675
 #, c-format
 msgid "Invalid password for %s"
 msgstr "A jelszó érvénytelen ehhez: %s"
 
-#: ../tools/realm-client.c:681
+#: ../tools/realm-client.c:679
 #, c-format
 msgid "Couldn't authenticate as %s"
 msgstr "Nem sikerült a hitelesítés mint %s"
 
-#: ../tools/realm-client.c:706
+#: ../tools/realm-client.c:704
 #, c-format
 msgid "Couldn't parse user name: %s"
 msgstr "A felhasználónév nem dolgozható fel: %s"
 
-#: ../tools/realm-client.c:730
+#: ../tools/realm-client.c:728
 msgid "Couldn't read credential cache"
 msgstr "Nem olvasható a hitelesítési adatok gyorsítótára"
 
-#: ../tools/realm-client.c:756 ../tools/realm-client.c:963
+#: ../tools/realm-client.c:754 ../tools/realm-client.c:961
 msgid "Couldn't initialize kerberos"
 msgstr "A kerberos nem készíthető elő"
 
-#: ../tools/realm-client.c:819
+#: ../tools/realm-client.c:817
 #, c-format
 msgid "Cannot prompt for a password when running in unattended mode"
 msgstr "Nem lehet jelszót kérni felügyelet nélküli módban futáskor"
 
-#: ../tools/realm-client.c:823
+#: ../tools/realm-client.c:821
 #, c-format
 msgid "Password for %s: "
 msgstr "%s jelszava: "
 
-#: ../tools/realm-client.c:841
+#: ../tools/realm-client.c:839
 #, c-format
 msgid "Couldn't prompt for password: %s"
 msgstr "Nem lehet bekérni a jelszót: %s"
 
-#: ../tools/realm-client.c:876
+#: ../tools/realm-client.c:874
 #, c-format
 msgid "Realm does not support membership using a password"
 msgstr "A tartomány nem támogatja a tagságot jelszó használatával"
 
-#: ../tools/realm-client.c:915
+#: ../tools/realm-client.c:913
 #, c-format
 msgid "Realm does not support membership using a one time password"
 msgstr "A tartomány nem támogatja a tagságot egyszeri jelszó használatával"
 
-#: ../tools/realm-client.c:983
+#: ../tools/realm-client.c:981
 msgid "Couldn't select kerberos credentials"
 msgstr "Nem sikerült a kerberos hitelesítési adatok kiválasztása"
 
-#: ../tools/realm-client.c:997
+#: ../tools/realm-client.c:995
 msgid "Couldn't read kerberos credentials"
 msgstr "Nem sikerült a kerberos hitelesítési adatok olvasása"
 
-#: ../tools/realm-client.c:1047
+#: ../tools/realm-client.c:1045
 #, c-format
 msgid "Realm does not support automatic membership"
 msgstr "A tartomány nem támogatja az automatikus tagságot"
@@ -478,16 +455,16 @@ msgstr "Minden felderített tartomány megjelenítése"
 msgid "Show only the names"
 msgstr "Csak a nevek megjelenítése"
 
-#: ../tools/realm-discover.c:183 ../tools/realm-join.c:292
+#: ../tools/realm-discover.c:183 ../tools/realm-join.c:287
 #: ../tools/realm-leave.c:266
 msgid "Use specific client software"
 msgstr "Konkrét kliensszoftver használata"
 
-#: ../tools/realm-discover.c:184 ../tools/realm-join.c:298
+#: ../tools/realm-discover.c:184 ../tools/realm-join.c:291
 msgid "Use specific membership software"
 msgstr "Konkrét tagsági szoftver használata"
 
-#: ../tools/realm-discover.c:185 ../tools/realm-join.c:308
+#: ../tools/realm-discover.c:185 ../tools/realm-join.c:289
 #: ../tools/realm-leave.c:269
 msgid "Use specific server software"
 msgstr "Konkrét kiszolgálószoftver használata"
@@ -496,66 +473,53 @@ msgstr "Konkrét kiszolgálószoftver használata"
 msgid "Show all realms"
 msgstr "Minden tartomány megjelenítése"
 
-#: ../tools/realm-join.c:92 ../tools/realm-join.c:132 ../tools/realm-join.c:163
+#: ../tools/realm-join.c:92 ../tools/realm-join.c:132
+#: ../tools/realm-join.c:163
 msgid "Couldn't join realm"
 msgstr "Nem sikerült csatlakozni a tartományhoz"
 
-#: ../tools/realm-join.c:231
+#: ../tools/realm-join.c:227
 msgid "Cannot join this realm"
 msgstr "Nem lehet csatlakozni a tartományhoz"
 
-#: ../tools/realm-join.c:233
+#: ../tools/realm-join.c:229
 msgid "No such realm found"
 msgstr "Nem található ilyen tartomány"
 
-#: ../tools/realm-join.c:290
-msgid "Turn off automatic id mapping"
-msgstr "Automatikus azonosítóleképezés kikapcsolása"
-
-#: ../tools/realm-join.c:294
-msgid "Use specific computer name instead of hostname"
-msgstr "Konkrét számítógépnév használata a gépnév helyett"
-
-#: ../tools/realm-join.c:296
-msgid "Computer OU DN to join"
-msgstr "Csatlakozás az ezzel az OU DN-nel rendelkező számítógéphez"
-
-#: ../tools/realm-join.c:300
-msgid "Join automatically without a password"
-msgstr "Csatlakozás automatikusan jelszó nélkül"
-
-#: ../tools/realm-join.c:302
-msgid "Join using a preset one time password"
-msgstr "Csatlakozás előre beállított egyszeri jelszóval"
-
-#: ../tools/realm-join.c:304
-msgid "Use specific operation system name"
-msgstr "Konkrét operációs rendszer név használata"
-
-#: ../tools/realm-join.c:306
-msgid "Use specific operation system version"
-msgstr "Konkrét operációs rendszer verzió használata"
-
-#: ../tools/realm-join.c:310
+#: ../tools/realm-join.c:283
 msgid "User name to use for enrollment"
 msgstr "A bejegyzéshez használandó felhasználónév"
 
-#: ../tools/realm-join.c:312
+#: ../tools/realm-join.c:285
+msgid "Computer OU DN to join"
+msgstr "Csatlakozás az ezzel az OU DN-nel rendelkező számítógéphez"
+
+#: ../tools/realm-join.c:293
+msgid "Join automatically without a password"
+msgstr "Csatlakozás automatikusan jelszó nélkül"
+
+#: ../tools/realm-join.c:295
+msgid "Join using a preset one time password"
+msgstr "Csatlakozás előre beállított egyszeri jelszóval"
+
+#: ../tools/realm-join.c:297
+msgid "Turn off automatic id mapping"
+msgstr "Automatikus azonosítóleképezés kikapcsolása"
+
+#: ../tools/realm-join.c:299
 msgid "Set the user principal for the computer account"
 msgstr "A felhasználó résztvevő beállítása a számítógépes fiókhoz"
 
-#: ../tools/realm-join.c:332
+#: ../tools/realm-join.c:319
 msgid "Specify one realm to join"
 msgstr "Adjon meg egy tartományt a csatlakozáshoz"
 
-#: ../tools/realm-join.c:337
+#: ../tools/realm-join.c:324
 msgid ""
 "The --no-password argument cannot be used with --one-time-password or --user"
-msgstr ""
-"A --no-password kapcsoló nem használható a --one-time-password vagy --user "
-"kapcsolókkal"
+msgstr "A --no-password kapcsoló nem használható a --one-time-password vagy --user kapcsolókkal"
 
-#: ../tools/realm-join.c:342
+#: ../tools/realm-join.c:329
 msgid "The --one-time-password argument cannot be used with --user"
 msgstr "A --one-time-password kapcsoló nem használható --user kapcsolóval"
 
@@ -601,8 +565,7 @@ msgstr "A -a vagy --all kapcsolóval nem adható meg bejelentkezési név"
 
 #: ../tools/realm-logins.c:222
 msgid "The --withdraw or -x arguments cannot be used when denying logins"
-msgstr ""
-"A --withdraw vagy -x kapcsolók nem használhatók bejelentkezések letiltásakor"
+msgstr "A --withdraw vagy -x kapcsolók nem használhatók bejelentkezések letiltásakor"
 
 #: ../tools/realm-logins.c:225
 msgid "Specific logins must be specified with --withdraw"
@@ -618,13 +581,9 @@ msgstr "Az összes bejelentkezés letiltásához használja a --all kapcsolót"
 
 #: ../tools/realm-logins.c:237
 msgid "Specify specific users to add or remove from the permitted list"
-msgstr ""
-"Adjon meg konkrét felhasználókat az engedélyezettek listájához adáshoz vagy "
-"onnan eltávolításhoz"
+msgstr "Adjon meg konkrét felhasználókat az engedélyezettek listájához adáshoz vagy onnan eltávolításhoz"
 
 #: ../tools/realm-logins.c:241
 msgid ""
 "Specifying deny without --all is deprecated. Use realm permit --withdraw"
-msgstr ""
-"A tiltás megadása elavult a --all használata nélkül. Használja a realm "
-"permit --withdraw parancsot"
+msgstr "A tiltás megadása elavult a --all használata nélkül. Használja a realm permit --withdraw parancsot"

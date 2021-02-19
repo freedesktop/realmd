@@ -4,13 +4,15 @@
 # 
 # Translators:
 # Joe Hansen <joedalton2@yahoo.dk>, 2013-2016
+# scootergrisen, 2019
+# scootergrisen, 2019
 msgid ""
 msgstr ""
 "Project-Id-Version: realmd\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-10-19 11:43+0200\n"
-"PO-Revision-Date: 2016-08-31 13:25+0000\n"
-"Last-Translator: Joe Hansen <joedalton2@yahoo.dk>\n"
+"PO-Revision-Date: 2019-03-08 19:02+0000\n"
+"Last-Translator: scootergrisen\n"
 "Language-Team: Danish (http://www.transifex.com/freedesktop/realmd/language/da/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -45,7 +47,7 @@ msgstr "Godkendelse er krævet for at fjerne denne computer fra et område eller
 
 #: ../service/org.freedesktop.realmd.policy.in.h:7
 msgid "Change login policy"
-msgstr "Ændr logindpolitik"
+msgstr "Ændr loginpolitik"
 
 #: ../service/org.freedesktop.realmd.policy.in.h:8
 msgid ""
@@ -91,7 +93,7 @@ msgstr "LDAP på dette system understøtter ikke UDP-forbindelser"
 #: ../service/realm-sssd-ad.c:309 ../service/realm-sssd-ipa.c:318
 #, c-format
 msgid "Unsupported or unknown membership software '%s'"
-msgstr "Ikke understøttet eller ukendt medlemskabsprogram »%s«"
+msgstr "Ej understøttet eller ukendt medlemskabsprogram »%s«"
 
 #: ../service/realm-example.c:170 ../service/realm-samba.c:282
 msgid "Already joined to a domain"
@@ -113,7 +115,7 @@ msgstr "Skal bruge akkreditiver for at forlade dette domæne"
 #: ../service/realm-ini-config.c:736
 #, c-format
 msgid "Couldn't write out config: %s"
-msgstr "Kunne ikke skrive ud-konfiguration: %s"
+msgstr "Kunne ikke skrive konfiguration: %s"
 
 #: ../service/realm-invocation.c:536
 msgid "Not authorized to perform this action"
@@ -183,17 +185,17 @@ msgstr "Allerede tilsluttet et andet domæne: %s"
 
 #: ../service/realm-kerberos.c:446
 msgid "Failed to change permitted logins. See diagnostics."
-msgstr "Kunne ikke ændre tilladte logind. Se diagnostik."
+msgstr "Kunne ikke ændre tilladte login. Se diagnostik."
 
 #: ../service/realm-kerberos.c:747
 #, c-format
 msgid "The realm does not allow specifying logins"
-msgstr "Området tillader ikke specificering af logind"
+msgstr "Området tillader ikke specificering af login"
 
 #: ../service/realm-kerberos.c:755
 #, c-format
 msgid "Invalid login argument%s%s%s does not match the login format."
-msgstr "Ugyldigt logindparameter%s%s%s matcher ikke logindformatet."
+msgstr "Ugyldig loginparameter%s%s%s matcher ikke loginformatet."
 
 #: ../service/realm-packages.c:389
 #, c-format
@@ -228,12 +230,12 @@ msgstr "Ikke sluttet til dette domæne"
 #: ../service/realm-samba.c:477 ../service/realm-samba.c:519
 #, c-format
 msgid "The Samba provider cannot restrict permitted logins."
-msgstr "Sambaleverandøren kan ikke begrænse tilladte logind."
+msgstr "Sambaleverandøren kan ikke begrænse tilladte login."
 
 #: ../service/realm-sssd.c:130
 #, c-format
 msgid "Invalid login argument '%s' contains unsupported characters."
-msgstr "Ugyldig logindparameter »%s« indeholder tegn der ikke er understøttet."
+msgstr "Ugyldig loginparameter »%s« indeholder tegn der ikke er understøttet."
 
 #: ../service/realm-sssd-ad.c:126 ../service/realm-sssd-ipa.c:124
 #, c-format
@@ -309,11 +311,11 @@ msgstr "Vis kendte områder"
 
 #: ../tools/realm.c:44
 msgid "Permit user logins"
-msgstr "Tillad brugerlogind"
+msgstr "Tillad brugerlogin"
 
 #: ../tools/realm.c:45
 msgid "Deny user logins"
-msgstr "Nægt brugerlogind"
+msgstr "Nægt brugerlogin"
 
 #: ../tools/realm.c:184
 #, c-format
@@ -347,7 +349,7 @@ msgstr "Kunne ikke forbinde til systembussen"
 #: ../tools/realm-client.c:279
 #, c-format
 msgid "Couldn't create socket pair: %s"
-msgstr "Kunne ikke oprette sokkepar: %s"
+msgstr "Kunne ikke oprette sokkelpar: %s"
 
 #: ../tools/realm-client.c:287 ../tools/realm-client.c:319
 msgid "Couldn't create socket"
@@ -402,7 +404,7 @@ msgstr "Kan ikke anmode om adgangskode når tilstanden er unattended"
 #: ../tools/realm-client.c:821
 #, c-format
 msgid "Password for %s: "
-msgstr "Adgangskode for %s:"
+msgstr "Adgangskode for %s: "
 
 #: ../tools/realm-client.c:839
 #, c-format
@@ -535,19 +537,19 @@ msgstr "Brugernavn at bruge for fjernelse"
 
 #: ../tools/realm-logins.c:129 ../tools/realm-logins.c:175
 msgid "Couldn't change permitted logins"
-msgstr "Kunne ikke ændre tilladte logind"
+msgstr "Kunne ikke ændre tilladte login"
 
 #: ../tools/realm-logins.c:200
 msgid "Permit any realm account login"
-msgstr "Tillad alle område-kontologind"
+msgstr "Tillad alle login for områdekonto"
 
 #: ../tools/realm-logins.c:200
 msgid "Deny any realm account login"
-msgstr "Nægt alle område-kontologind"
+msgstr "Nægt alle login for områdekonto"
 
 #: ../tools/realm-logins.c:202
 msgid "Withdraw permit for a realm account to login"
-msgstr "Træk tilladelse tilbage for områdekonto til logind"
+msgstr "Træk tilladelse tilbage for områdekonto til login"
 
 #: ../tools/realm-logins.c:204
 msgid "Treat names as groups which to permit"
@@ -555,33 +557,33 @@ msgstr "Opfat navne som grupper som at tillade"
 
 #: ../tools/realm-logins.c:205
 msgid "Realm to permit/deny logins for"
-msgstr "Område at tillade/nægte logind for"
+msgstr "Område at tillade/nægte login for"
 
 #: ../tools/realm-logins.c:219
 msgid "No logins should be specified with -a or --all"
-msgstr "Ingen logind skal angivet med -a eller -all"
+msgstr "Ingen login skal angives med -a eller --all"
 
 #: ../tools/realm-logins.c:222
 msgid "The --withdraw or -x arguments cannot be used when denying logins"
-msgstr "Parametrene --withdraw eller -x kan ikke bruges uden at nægte logind"
+msgstr "Parametrene --withdraw eller -x kan ikke bruges uden at nægte login"
 
 #: ../tools/realm-logins.c:225
 msgid "Specific logins must be specified with --withdraw"
-msgstr "Specifikke logind skal angives med --withdraw"
+msgstr "Specifikke login skal angives med --withdraw"
 
 #: ../tools/realm-logins.c:228
 msgid "Groups may not be specified with -a or --all"
-msgstr "Grupper må ikke specificeres med -a eller --all"
+msgstr "Grupper må ikke angives med -a eller --all"
 
 #: ../tools/realm-logins.c:235
 msgid "Use --all to deny all logins"
-msgstr "Brug --all til at nægte alle logind"
+msgstr "Brug --all til at nægte alle login"
 
 #: ../tools/realm-logins.c:237
 msgid "Specify specific users to add or remove from the permitted list"
-msgstr "Specificer specifikke brugere at tilføje eller fjerne fra den tilladte liste"
+msgstr "Angiv specifikke brugere at tilføje eller fjerne fra den tilladte liste"
 
 #: ../tools/realm-logins.c:241
 msgid ""
 "Specifying deny without --all is deprecated. Use realm permit --withdraw"
-msgstr "Angivelse af nægt (deny) uden --all er forældet. Brug områdetilladelse --withdraw"
+msgstr "Angivelse af deny uden --all er forældet. Brug områdetilladelse --withdraw"

@@ -4,14 +4,15 @@
 # 
 # Translators:
 # Benjamin Steinwender <b@stbe.at>, 2014
+# Ben Wiederhake <BenWiederhake.GitHub@gmx.de>, 2020
 # Ettore Atalan <atalanttore@googlemail.com>, 2014-2015
 msgid ""
 msgstr ""
 "Project-Id-Version: realmd\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-10-19 11:43+0200\n"
-"PO-Revision-Date: 2015-10-21 11:59+0000\n"
-"Last-Translator: Ettore Atalan <atalanttore@googlemail.com>\n"
+"PO-Revision-Date: 2020-10-23 11:54+0000\n"
+"Last-Translator: Ben Wiederhake <BenWiederhake.GitHub@gmx.de>\n"
 "Language-Team: German (http://www.transifex.com/freedesktop/realmd/language/de/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -92,7 +93,7 @@ msgstr "LDAP auf diesem System unterstützt keine UDP-Verbindungen"
 #: ../service/realm-sssd-ad.c:309 ../service/realm-sssd-ipa.c:318
 #, c-format
 msgid "Unsupported or unknown membership software '%s'"
-msgstr "Nicht unterstützte oder unbekannte Software »%s«"
+msgstr "Nicht unterstützte oder unbekannte Mitgliedschafts-Software »%s«"
 
 #: ../service/realm-example.c:170 ../service/realm-samba.c:282
 msgid "Already joined to a domain"
@@ -251,14 +252,14 @@ msgstr "Der Domäne kann nicht automatisch beigetreten werden"
 msgid ""
 "Joining a domain with a one time password is only supported with the '%s' "
 "membership software"
-msgstr ""
+msgstr "Das Beitreten zu einer Domäne mit einem Einmalpasswort wird nur mit der Mitgliedschafts-Software »%s« unterstützt"
 
 #: ../service/realm-sssd-ad.c:340
 #, c-format
 msgid ""
 "Joining a domain with a user password is only supported with the '%s' "
 "membership software"
-msgstr ""
+msgstr "Das Beitreten zu einer Domäne mit einem Nutzerpasswort wird nur mit der Mitgliedschafts-Software »%s« unterstützt"
 
 #: ../service/realm-sssd-ad.c:356
 #, c-format
@@ -507,7 +508,7 @@ msgstr ""
 
 #: ../tools/realm-join.c:299
 msgid "Set the user principal for the computer account"
-msgstr ""
+msgstr "Das Benutzer-Principal für das Rechnerkonto festlegen"
 
 #: ../tools/realm-join.c:319
 msgid "Specify one realm to join"
@@ -516,11 +517,11 @@ msgstr "Geben Sie einen Bereich zum Beitreten an"
 #: ../tools/realm-join.c:324
 msgid ""
 "The --no-password argument cannot be used with --one-time-password or --user"
-msgstr "Das Argument »--no-password« kann nicht zusammen mit »--one-time-password« oder »--user« verwendet werden."
+msgstr "Das Argument »--no-password« kann nicht zusammen mit »--one-time-password« oder »--user« verwendet werden"
 
 #: ../tools/realm-join.c:329
 msgid "The --one-time-password argument cannot be used with --user"
-msgstr "Das Argument »--one-time-password« kann nicht zusammen mit »--user« verwendet werden."
+msgstr "Das Argument »--one-time-password« kann nicht zusammen mit »--user« verwendet werden"
 
 #: ../tools/realm-leave.c:181 ../tools/realm-leave.c:208
 msgid "Couldn't leave realm"
@@ -548,7 +549,7 @@ msgstr "Anmeldung jedes Bereichsbenutzerkontos verweigern"
 
 #: ../tools/realm-logins.c:202
 msgid "Withdraw permit for a realm account to login"
-msgstr ""
+msgstr "Erlaubnis für die zur Anmeldung mit Bereichskonten zurückziehen"
 
 #: ../tools/realm-logins.c:204
 msgid "Treat names as groups which to permit"
@@ -564,7 +565,7 @@ msgstr "Keine Anmeldungen sollten mit -a oder --all angegeben werden"
 
 #: ../tools/realm-logins.c:222
 msgid "The --withdraw or -x arguments cannot be used when denying logins"
-msgstr ""
+msgstr "Die Argumente »--withdraw« und »-x« dürfen nicht beim Verweigern von Anmeldungen verwendet werden"
 
 #: ../tools/realm-logins.c:225
 msgid "Specific logins must be specified with --withdraw"

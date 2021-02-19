@@ -4,17 +4,17 @@
 # 
 # Translators:
 # bnw, 2015
-# Christopher Meng <i@cicku.me>, 2013
-# Christopher Meng <i@cicku.me>, 2013
-# bnw, 2015
+# Christopher M <i@cicku.me>, 2013
+# Christopher M <i@cicku.me>, 2013
+# 5b4c6a53e2e9f6d66be0455f2c8d22a2, 2015
 # Mingye Wang <arthur200126@gmail.com>, 2015
-# Wylmer Wang, 2013
+# e0c668032ced196bd60f2b6a070d982d_8f72ae0, 2013
 msgid ""
 msgstr ""
 "Project-Id-Version: realmd\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-10-19 11:43+0200\n"
-"PO-Revision-Date: 2015-11-11 01:02+0000\n"
+"PO-Revision-Date: 2017-09-19 15:16+0000\n"
 "Last-Translator: Mingye Wang <arthur200126@gmail.com>\n"
 "Language-Team: Chinese (China) (http://www.transifex.com/freedesktop/realmd/language/zh_CN/)\n"
 "MIME-Version: 1.0\n"

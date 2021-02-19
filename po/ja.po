@@ -4,14 +4,15 @@
 # 
 # Translators:
 # Hajime Taira <htaira@redhat.com>, 2013
-# Tomoyuki KATO <tomo@dream.daynight.jp>, 2013
+# Takuro Onoue <kusanaginoturugi@gmail.com>, 2021
+# e93ed3aa97dec2eb31063731872555fc_1460a05 <71305a0095156d8e18373a5b7cfeb79e_8587>, 2013
 msgid ""
 msgstr ""
 "Project-Id-Version: realmd\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-10-19 11:43+0200\n"
-"PO-Revision-Date: 2015-10-20 19:12+0000\n"
-"Last-Translator: Stef Walter <stefw@gnome.org>\n"
+"PO-Revision-Date: 2021-01-22 02:39+0000\n"
+"Last-Translator: Takuro Onoue <kusanaginoturugi@gmail.com>\n"
 "Language-Team: Japanese (http://www.transifex.com/freedesktop/realmd/language/ja/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -21,28 +22,28 @@ msgstr ""
 
 #: ../service/org.freedesktop.realmd.policy.in.h:1
 msgid "Discover realm"
-msgstr ""
+msgstr "レルムを検出する"
 
 #: ../service/org.freedesktop.realmd.policy.in.h:2
 msgid "Authentication is required to discover a kerberos realm"
-msgstr ""
+msgstr "Kerberosレルムを検出するには認証が必要です"
 
 #: ../service/org.freedesktop.realmd.policy.in.h:3
 msgid "Join machine to realm"
-msgstr ""
+msgstr "マシンをレルムに参加させる"
 
 #: ../service/org.freedesktop.realmd.policy.in.h:4
 msgid "Authentication is required to join this machine to a realm or domain"
-msgstr ""
+msgstr "このマシンをレルムまたはドメインに参加させるには認証が必要です"
 
 #: ../service/org.freedesktop.realmd.policy.in.h:5
 msgid "Remove machine from realm"
-msgstr ""
+msgstr "レルムからマシンを削除します"
 
 #: ../service/org.freedesktop.realmd.policy.in.h:6
 msgid ""
 "Authentication is required to remove this computer from a realm or domain."
-msgstr ""
+msgstr "このコンピューターをレルムまたはドメインから削除するには、認証が必要です。"
 
 #: ../service/org.freedesktop.realmd.policy.in.h:7
 msgid "Change login policy"
@@ -52,22 +53,22 @@ msgstr "ログインポリシーの変更"
 msgid ""
 "Authentication is required to change the policy of who can log in on this "
 "computer."
-msgstr ""
+msgstr "このコンピューターをレルムまたはドメインから削除するには、認証が必要です。"
 
 #: ../service/realm-command.c:347
 #, c-format
 msgid "Process was terminated with signal: %d"
-msgstr ""
+msgstr "プロセスはこのシグナルで終了しました: %d"
 
 #: ../service/realm-command.c:396 ../service/realm-ldap.c:349
 #, c-format
 msgid "The operation was cancelled"
-msgstr "操作が取り消されました"
+msgstr "操作がキャンセルされました"
 
 #: ../service/realm-command.c:573
 #, c-format
 msgid "Configured command not found: %s"
-msgstr ""
+msgstr "設定されたコマンドが見つかりません: %s"
 
 #: ../service/realm-command.c:578
 #, c-format
@@ -82,17 +83,17 @@ msgstr "設定されたコマンドが無効: %s"
 #: ../service/realm-disco-mscldap.c:198
 #, c-format
 msgid "Received invalid or unsupported Netlogon data from server"
-msgstr ""
+msgstr "サーバーから無効またはサポートされていない Netlogon データを受信しました"
 
 #: ../service/realm-disco-mscldap.c:346
 msgid "LDAP on this system does not support UDP connections"
-msgstr ""
+msgstr "このシステムの LDAP は UDP 接続をサポートしていません"
 
 #: ../service/realm-example.c:82 ../service/realm-samba.c:247
 #: ../service/realm-sssd-ad.c:309 ../service/realm-sssd-ipa.c:318
 #, c-format
 msgid "Unsupported or unknown membership software '%s'"
-msgstr ""
+msgstr "サポートされていない、または不明なメンバーシップソフトウェア '%s'"
 
 #: ../service/realm-example.c:170 ../service/realm-samba.c:282
 msgid "Already joined to a domain"
@@ -100,78 +101,78 @@ msgstr "すでにドメインに参加済み"
 
 #: ../service/realm-example.c:178 ../service/realm-example.c:271
 msgid "Admin name or password is not valid"
-msgstr ""
+msgstr "管理者名またはパスワードが無効です"
 
 #: ../service/realm-example.c:242 ../service/realm-samba.c:422
 #: ../service/realm-sssd-ad.c:514
 msgid "Not currently joined to this domain"
-msgstr ""
+msgstr "現在このドメインに参加していません"
 
 #: ../service/realm-example.c:301
 msgid "Need credentials for leaving this domain"
-msgstr ""
+msgstr "このドメインを離れるには資格情報が必要です"
 
 #: ../service/realm-ini-config.c:736
 #, c-format
 msgid "Couldn't write out config: %s"
-msgstr ""
+msgstr "設定を書き出すことができませんでした: %s"
 
 #: ../service/realm-invocation.c:536
 msgid "Not authorized to perform this action"
-msgstr ""
+msgstr "このアクションを実行する権限がありません"
 
 #: ../service/realm-kerberos.c:130 ../service/realm-kerberos.c:208
 #: ../service/realm-provider.c:156
 msgid "Operation was cancelled."
-msgstr ""
+msgstr "操作はキャンセルされました。"
 
 #: ../service/realm-kerberos.c:135
 msgid "Failed to enroll machine in realm. See diagnostics."
-msgstr ""
+msgstr "マシンをレルムに登録できませんでした。診断を参照してください。"
 
 #: ../service/realm-kerberos.c:213
 msgid "Failed to unenroll machine from domain. See diagnostics."
-msgstr ""
+msgstr "ドメインからマシンの登録解除に失敗しました。診断を参照してください。"
 
 #: ../service/realm-kerberos.c:272
 msgid "Joining this realm without credentials is not supported"
-msgstr ""
+msgstr "資格情報なしでこのレルムに参加することはサポートされていません"
 
 #: ../service/realm-kerberos.c:273
 msgid "Leaving this realm without credentials is not supported"
-msgstr ""
+msgstr "資格情報なしでこのレルムを離れることはサポートされていません"
 
 #: ../service/realm-kerberos.c:276
 msgid "Joining this realm using a credential cache is not supported"
-msgstr ""
+msgstr "資格情報キャッシュを使用してこのレルムへ参加することはサポートされていません"
 
 #: ../service/realm-kerberos.c:277
 msgid "Leaving this realm using a credential cache is not supported"
-msgstr ""
+msgstr "資格情報キャッシュを使用してこのレルムを離れることはサポートされていません"
 
 #: ../service/realm-kerberos.c:280
 msgid "Joining this realm using a secret is not supported"
-msgstr ""
+msgstr "secret を使用してこのレルムへ参加することはサポートされていません"
 
 #: ../service/realm-kerberos.c:281
 msgid "Unenrolling this realm using a secret is not supported"
-msgstr ""
+msgstr "secret を使用してこのレルムから登録解除することはサポートされていません"
 
 #: ../service/realm-kerberos.c:284
 msgid "Enrolling this realm using a password is not supported"
-msgstr ""
+msgstr "パスワードを使用してこのレルムを登録することはサポートされていません"
 
 #: ../service/realm-kerberos.c:285
 msgid "Unenrolling this realm using a password is not supported"
-msgstr ""
+msgstr "パスワードを使用してこのレルムを登録解除することはサポートされていません"
 
 #: ../service/realm-kerberos.c:311
 msgid "Joining this realm is not supported"
-msgstr ""
+msgstr "このレルムへの参加はサポートされていません"
 
 #: ../service/realm-kerberos.c:312
 msgid "Leaving this realm is not supported"
-msgstr ""
+msgstr "このレルムを離れることはサポートされていません"
 
 #: ../service/realm-kerberos.c:332 ../service/realm-kerberos.c:504
 msgid "Already running another action"
@@ -180,31 +181,31 @@ msgstr "すでに他の操作が実行中"
 #: ../service/realm-kerberos.c:375
 #, c-format
 msgid "Already joined to another domain: %s"
-msgstr ""
+msgstr "すでに別のドメインに参加しています: %s"
 
 #: ../service/realm-kerberos.c:446
 msgid "Failed to change permitted logins. See diagnostics."
-msgstr ""
+msgstr "許可されたログインの変更に失敗しました。診断を参照してください。"
 
 #: ../service/realm-kerberos.c:747
 #, c-format
 msgid "The realm does not allow specifying logins"
-msgstr ""
+msgstr "レルムではログインを指定できません"
 
 #: ../service/realm-kerberos.c:755
 #, c-format
 msgid "Invalid login argument%s%s%s does not match the login format."
-msgstr ""
+msgstr "無効なログイン引数 %s %s %s がログイン形式と一致しません。"
 
 #: ../service/realm-packages.c:389
 #, c-format
 msgid "The following packages are not available for installation: %s"
-msgstr ""
+msgstr "次のパッケージはインストールできません: %s"
 
 #: ../service/realm-packages.c:471 ../service/realm-packages.c:508
 #, c-format
 msgid "Necessary packages are not installed: %s"
-msgstr ""
+msgstr "必要なパッケージがインストールされていません: %s"
 
 #. * Various people have been worried by installing packages
 #. * quietly, so notify about what's going on.
@@ -215,55 +216,55 @@ msgstr ""
 #. * worried, remove realmd and do stuff manually.
 #: ../service/realm-packages.c:477 ../tools/realm-client.c:143
 msgid "Installing necessary packages"
-msgstr ""
+msgstr "必要なパッケージのインストール"
 
 #: ../service/realm-provider.c:161
 msgid "Failed to discover realm. See diagnostics."
-msgstr ""
+msgstr "レルムの検出に失敗しました。診断を参照してください。"
 
 #: ../service/realm-samba.c:467
 #, c-format
 msgid "Not joined to this domain"
-msgstr ""
+msgstr "このドメインに参加していません"
 
 #: ../service/realm-samba.c:477 ../service/realm-samba.c:519
 #, c-format
 msgid "The Samba provider cannot restrict permitted logins."
-msgstr ""
+msgstr "Samba プロバイダーは、許可されたログインを制限できません。"
 
 #: ../service/realm-sssd.c:130
 #, c-format
 msgid "Invalid login argument '%s' contains unsupported characters."
-msgstr ""
+msgstr "無効なログイン引数 '%s' にサポートされていない文字が含まれています。"
 
 #: ../service/realm-sssd-ad.c:126 ../service/realm-sssd-ipa.c:124
 #, c-format
 msgid "Enabling SSSD in nsswitch.conf and PAM failed."
-msgstr ""
+msgstr "nsswitch.conf および PAM で SSSD を有効にできませんでした。"
 
 #: ../service/realm-sssd-ad.c:240
 #, c-format
 msgid "Unable to automatically join the domain"
-msgstr ""
+msgstr "ドメインに自動的に参加できません"
 
 #: ../service/realm-sssd-ad.c:326
 #, c-format
 msgid ""
 "Joining a domain with a one time password is only supported with the '%s' "
 "membership software"
-msgstr ""
+msgstr "ワンタイムパスワードでドメインに参加することは、'%s' メンバーシップソフトウェアでのみサポートされます"
 
 #: ../service/realm-sssd-ad.c:340
 #, c-format
 msgid ""
 "Joining a domain with a user password is only supported with the '%s' "
 "membership software"
-msgstr ""
+msgstr "ユーザーパスワードを使用してドメインに参加することは、'%s' メンバーシップソフトウェアでのみサポートされます"
 
 #: ../service/realm-sssd-ad.c:356
 #, c-format
 msgid "Unsupported credentials for joining a domain"
-msgstr ""
+msgstr "ドメインに参加するためのサポートされていない資格情報"
 
 #: ../service/realm-sssd-ad.c:398 ../service/realm-sssd-ipa.c:322
 #: ../tools/realm-join.c:236
@@ -272,41 +273,41 @@ msgstr "すでにこのドメインに参加済み"
 
 #: ../service/realm-sssd-ad.c:402 ../service/realm-sssd-ipa.c:326
 msgid "A domain with this name is already configured"
-msgstr ""
+msgstr "この名前のドメインはすでに設定されています"
 
 #: ../service/realm-sssd-config.c:145
 #, c-format
 msgid "Already have domain %s in sssd.conf config file"
-msgstr ""
+msgstr "sssd.conf 設定ファイルにすでにドメイン %s があります"
 
 #: ../service/realm-sssd-config.c:190
 #, c-format
 msgid "Don't have domain %s in sssd.conf config file"
-msgstr ""
+msgstr "sssd.conf 設定ファイルにドメイン %s がありません"
 
 #: ../service/realm-sssd-ipa.c:312
 msgid "The computer-ou argument is not supported when joining an IPA domain."
-msgstr ""
+msgstr "IPA ドメインに参加する場合、computer-ou 引数はサポートされていません。"
 
 #: ../service/realm-sssd-ipa.c:480
 msgid "Not currently joined to this realm"
-msgstr ""
+msgstr "現在、このレルムに参加していません"
 
 #: ../tools/realm.c:40
 msgid "Discover available realm"
-msgstr "利用可能なレルムを探索"
+msgstr "利用可能なレルムを検出する"
 
 #: ../tools/realm.c:41
 msgid "Enroll this machine in a realm"
-msgstr ""
+msgstr "このマシンをレルムに登録する"
 
 #: ../tools/realm.c:42
 msgid "Unenroll this machine from a realm"
-msgstr ""
+msgstr "このマシンをレルムから登録解除する"
 
 #: ../tools/realm.c:43
 msgid "List known realms"
-msgstr ""
+msgstr "既知のレルムを一覧表示する"
 
 #: ../tools/realm.c:44
 msgid "Permit user logins"
@@ -319,11 +320,11 @@ msgstr "ユーザーのログインを拒否"
 #: ../tools/realm.c:184
 #, c-format
 msgid "Invalid value for %s option: %s"
-msgstr ""
+msgstr "%s オプションの値が無効です: %s"
 
 #: ../tools/realm.c:216
 msgid "Install mode to a specific prefix"
-msgstr ""
+msgstr "特定のプレフィックスにインストールモードを設定する"
 
 #: ../tools/realm.c:217
 msgid "Verbose output"
@@ -331,46 +332,46 @@ msgstr "詳細な出力"
 
 #: ../tools/realm.c:218
 msgid "Do not prompt for input"
-msgstr ""
+msgstr "入力を要求しないでください"
 
 #: ../tools/realm-client.c:193 ../tools/realm-client.c:203
 msgid "Couldn't connect to realm service"
-msgstr ""
+msgstr "レルムサービスに接続できませんでした"
 
 #: ../tools/realm-client.c:232
 msgid "Couldn't load the realm service"
-msgstr ""
+msgstr "レルムサービスをロードできませんでした"
 
 #: ../tools/realm-client.c:249
 msgid "Couldn't connect to system bus"
-msgstr ""
+msgstr "システムバスに接続できませんでした"
 
 #: ../tools/realm-client.c:279
 #, c-format
 msgid "Couldn't create socket pair: %s"
-msgstr ""
+msgstr "ソケットペアを作成できませんでした: %s"
 
 #: ../tools/realm-client.c:287 ../tools/realm-client.c:319
 msgid "Couldn't create socket"
-msgstr "ソケットを生成できません"
+msgstr "ソケットを生成できませんでした"
 
 #: ../tools/realm-client.c:300
 msgid "Couldn't run realmd"
-msgstr "realmd を起動できません"
+msgstr "realmd を起動できませんでした"
 
 #: ../tools/realm-client.c:565
 #, c-format
 msgid "Couldn't create runtime directory: %s: %s"
-msgstr ""
+msgstr "ランタイムディレクトリを作成できませんでした: %s: %s"
 
 #: ../tools/realm-client.c:575
 #, c-format
 msgid "Couldn't create credential cache file: %s: %s"
-msgstr ""
+msgstr "資格情報キャッシュファイルを作成できませんでした: %s: %s"
 
 #: ../tools/realm-client.c:585
 msgid "Couldn't resolve credential cache"
-msgstr ""
+msgstr "資格情報キャッシュを解決できませんでした"
 
 #: ../tools/realm-client.c:675
 #, c-format
@@ -380,25 +381,25 @@ msgstr "%s に対する無効なパスワード"
 #: ../tools/realm-client.c:679
 #, c-format
 msgid "Couldn't authenticate as %s"
-msgstr ""
+msgstr "%s として認証できませんでした"
 
 #: ../tools/realm-client.c:704
 #, c-format
 msgid "Couldn't parse user name: %s"
-msgstr ""
+msgstr "ユーザー名をパースできませんでした: %s"
 
 #: ../tools/realm-client.c:728
 msgid "Couldn't read credential cache"
-msgstr ""
+msgstr "資格情報キャッシュを読み取れませんでした"
 
 #: ../tools/realm-client.c:754 ../tools/realm-client.c:961
 msgid "Couldn't initialize kerberos"
-msgstr ""
+msgstr "kerberos を初期化できませんでした"
 
 #: ../tools/realm-client.c:817
 #, c-format
 msgid "Cannot prompt for a password when running in unattended mode"
-msgstr ""
+msgstr "無人モードで実行している場合、パスワードの入力を求めることはできません"
 
 #: ../tools/realm-client.c:821
 #, c-format
@@ -408,47 +409,47 @@ msgstr "%s に対するパスワード:"
 #: ../tools/realm-client.c:839
 #, c-format
 msgid "Couldn't prompt for password: %s"
-msgstr ""
+msgstr "パスワードの入力を求めることができませんでした: %s"
 
 #: ../tools/realm-client.c:874
 #, c-format
 msgid "Realm does not support membership using a password"
-msgstr ""
+msgstr "レルムはパスワードを使用したメンバーシップをサポートしていません"
 
 #: ../tools/realm-client.c:913
 #, c-format
 msgid "Realm does not support membership using a one time password"
-msgstr ""
+msgstr "レルムはワンタイムパスワードを使用したメンバーシップをサポートしていません"
 
 #: ../tools/realm-client.c:981
 msgid "Couldn't select kerberos credentials"
-msgstr ""
+msgstr "kerberos 資格情報を選択できませんでした"
 
 #: ../tools/realm-client.c:995
 msgid "Couldn't read kerberos credentials"
-msgstr ""
+msgstr "kerberos 資格情報を読み取れませんでした"
 
 #: ../tools/realm-client.c:1045
 #, c-format
 msgid "Realm does not support automatic membership"
-msgstr ""
+msgstr "レルムは自動メンバーシップをサポートしていません"
 
 #: ../tools/realm-discover.c:135
 msgid "Couldn't discover realms"
-msgstr ""
+msgstr "レルムを検出できませんでした"
 
 #: ../tools/realm-discover.c:155
 msgid "No default realm discovered"
-msgstr ""
+msgstr "デフォルトのレルムは検出されません"
 
 #: ../tools/realm-discover.c:157
 #, c-format
 msgid "No such realm found: %s"
-msgstr ""
+msgstr "そのようなレルムは見つかりませんでした: %s"
 
 #: ../tools/realm-discover.c:181
 msgid "Show all discovered realms"
-msgstr ""
+msgstr "検出されたすべてのレルムを表示"
 
 #: ../tools/realm-discover.c:182 ../tools/realm-discover.c:273
 msgid "Show only the names"
@@ -457,132 +458,132 @@ msgstr "名前だけ表示"
 #: ../tools/realm-discover.c:183 ../tools/realm-join.c:287
 #: ../tools/realm-leave.c:266
 msgid "Use specific client software"
-msgstr ""
+msgstr "特定のクライアントソフトウェアを使用する"
 
 #: ../tools/realm-discover.c:184 ../tools/realm-join.c:291
 msgid "Use specific membership software"
-msgstr ""
+msgstr "特定のメンバーシップソフトウェアを使用する"
 
 #: ../tools/realm-discover.c:185 ../tools/realm-join.c:289
 #: ../tools/realm-leave.c:269
 msgid "Use specific server software"
-msgstr ""
+msgstr "特定のサーバーソフトウェアを使用する"
 
 #: ../tools/realm-discover.c:272
 msgid "Show all realms"
-msgstr ""
+msgstr "すべてのレルムを表示"
 
 #: ../tools/realm-join.c:92 ../tools/realm-join.c:132
 #: ../tools/realm-join.c:163
 msgid "Couldn't join realm"
-msgstr ""
+msgstr "レルムに参加できませんでした"
 
 #: ../tools/realm-join.c:227
 msgid "Cannot join this realm"
-msgstr ""
+msgstr "このレルムに参加できません"
 
 #: ../tools/realm-join.c:229
 msgid "No such realm found"
-msgstr ""
+msgstr "そのようなレルムは見つかりませんでした"
 
 #: ../tools/realm-join.c:283
 msgid "User name to use for enrollment"
-msgstr ""
+msgstr "登録に使用するユーザー名"
 
 #: ../tools/realm-join.c:285
 msgid "Computer OU DN to join"
-msgstr ""
+msgstr "コンピューター OU DN に参加する"
 
 #: ../tools/realm-join.c:293
 msgid "Join automatically without a password"
-msgstr ""
+msgstr "パスワードなしで自動的に参加"
 
 #: ../tools/realm-join.c:295
 msgid "Join using a preset one time password"
-msgstr ""
+msgstr "プリセットワンタイムパスワードを使用して参加する"
 
 #: ../tools/realm-join.c:297
 msgid "Turn off automatic id mapping"
-msgstr ""
+msgstr "自動 ID マッピングをオフにします"
 
 #: ../tools/realm-join.c:299
 msgid "Set the user principal for the computer account"
-msgstr ""
+msgstr "コンピューターアカウントのユーザープリンシパルを設定する"
 
 #: ../tools/realm-join.c:319
 msgid "Specify one realm to join"
-msgstr ""
+msgstr "参加するレルムを1つ指定する"
 
 #: ../tools/realm-join.c:324
 msgid ""
 "The --no-password argument cannot be used with --one-time-password or --user"
-msgstr ""
+msgstr "--no-password 引数は、-one-time-password または --user と一緒に使用することはできません。"
 
 #: ../tools/realm-join.c:329
 msgid "The --one-time-password argument cannot be used with --user"
-msgstr ""
+msgstr "--one-time-password 引数は --user と一緒に使用できません"
 
 #: ../tools/realm-leave.c:181 ../tools/realm-leave.c:208
 msgid "Couldn't leave realm"
-msgstr ""
+msgstr "レルムを離れることができませんでした"
 
 #: ../tools/realm-leave.c:267
 msgid "Remove computer from realm"
-msgstr "コンピューターをレルムから削除"
+msgstr "レルムからコンピューターを削除"
 
 #: ../tools/realm-leave.c:270
 msgid "User name to use for removal"
-msgstr ""
+msgstr "削除に使用するユーザー名"
 
 #: ../tools/realm-logins.c:129 ../tools/realm-logins.c:175
 msgid "Couldn't change permitted logins"
-msgstr ""
+msgstr "許可されたログインを変更できませんでした"
 
 #: ../tools/realm-logins.c:200
 msgid "Permit any realm account login"
-msgstr ""
+msgstr "レルムアカウントのログインを許可する"
 
 #: ../tools/realm-logins.c:200
 msgid "Deny any realm account login"
-msgstr ""
+msgstr "レルムアカウントのログインを拒否する"
 
 #: ../tools/realm-logins.c:202
 msgid "Withdraw permit for a realm account to login"
-msgstr ""
+msgstr "レルムアカウントのログインの許可を取り消す"
 
 #: ../tools/realm-logins.c:204
 msgid "Treat names as groups which to permit"
-msgstr ""
+msgstr "名前を許可するグループとして扱います"
 
 #: ../tools/realm-logins.c:205
 msgid "Realm to permit/deny logins for"
-msgstr ""
+msgstr "ログインを許可/拒否するレルム"
 
 #: ../tools/realm-logins.c:219
 msgid "No logins should be specified with -a or --all"
-msgstr ""
+msgstr "-a または --all を使用してログインを指定しないでください"
 
 #: ../tools/realm-logins.c:222
 msgid "The --withdraw or -x arguments cannot be used when denying logins"
-msgstr ""
+msgstr "ログインを拒否する場合、-withdraw または -x 引数は使用できません"
 
 #: ../tools/realm-logins.c:225
 msgid "Specific logins must be specified with --withdraw"
-msgstr ""
+msgstr "特定のログインは --withdraw で指定する必要があります"
 
 #: ../tools/realm-logins.c:228
 msgid "Groups may not be specified with -a or --all"
-msgstr ""
+msgstr "グループを -a または --all を指定することはできません"
 
 #: ../tools/realm-logins.c:235
 msgid "Use --all to deny all logins"
-msgstr ""
+msgstr "--all を使用して、すべてのログインを拒否します"
 
 #: ../tools/realm-logins.c:237
 msgid "Specify specific users to add or remove from the permitted list"
-msgstr ""
+msgstr "許可リストに追加または削除する特定のユーザーを指定します"
 
 #: ../tools/realm-logins.c:241
 msgid ""
 "Specifying deny without --all is deprecated. Use realm permit --withdraw"
-msgstr ""
+msgstr "--all なしで deny を指定することは非推奨です。--withdraw でレルムの使用を許可する"
