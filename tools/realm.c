@@ -287,6 +287,13 @@ main (int argc,
 			ret = (realm_commands[i].function) (client, argc, argv);
 			g_object_unref (client);
 
+#ifdef VENDOR_MSG
+			if (ret != 0) {
+				g_printerr (VENDOR_MSG"\n");
+			}
+
+#endif
+
 			break;
 		}
 	}
