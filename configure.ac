@@ -1,4 +1,4 @@
-AC_PREREQ(2.63)
+AC_PREREQ([2.63])
 
 AC_INIT([realmd], [0.17.0],
         [https://gitlab.freedesktop.org/realmd/realmd/-/issues],
@@ -69,8 +69,7 @@ AC_ARG_WITH([vendor-error-message],
 # -----------------------------------------------------------------------------
 # Basic tools
 
-AC_GNU_SOURCE
-AC_ISC_POSIX
+AC_USE_SYSTEM_EXTENSIONS
 AC_PROG_CC
 AC_PROG_CPP
 AM_PROG_CC_C_O
@@ -109,7 +108,7 @@ AC_SUBST(POLKIT_LIBS)
 
 AC_MSG_CHECKING([systemd unit directory])
 AC_ARG_WITH(systemd-unit-dir,
-            AC_HELP_STRING([--with-systemd-unit-dir],
+            AS_HELP_STRING([--with-systemd-unit-dir],
                            [Directory to install systemd service file]))
 
 if test "$with_systemd_unit_dir" = "" -o "$with_systemd_unit_dir" = "yes"; then
@@ -136,7 +135,7 @@ AC_SUBST(dbus_systemd_service)
 AC_MSG_RESULT($with_systemd_unit_dir)
 
 AC_ARG_WITH(systemd-journal,
-            AC_HELP_STRING([--with-systemd-journal],
+            AS_HELP_STRING([--with-systemd-journal],
                            [Use systemd's journal for logging]))
 
 if test "$with_systemd_journal" != "no"; then
@@ -245,7 +244,7 @@ AC_SUBST(POLKIT_ACTION_DIR)
 
 AC_MSG_CHECKING([whether to build documentation])
 AC_ARG_ENABLE(doc,
-              AC_HELP_STRING([--enable-doc],
+              AS_HELP_STRING([--enable-doc],
                              [Disable building documentation])
              )
 
@@ -314,7 +313,7 @@ AC_SUBST(GENHTML)
 
 AC_MSG_CHECKING([for debug mode])
 AC_ARG_ENABLE(debug,
-              AC_HELP_STRING([--enable-debug=no/default/yes],
+              AS_HELP_STRING([--enable-debug=no/default/yes],
                              [Turn on or off debugging])
              )
 
@@ -397,7 +396,7 @@ AC_SUBST(TEST_MODE)
 privatedir='${prefix}/lib/realmd'
 AC_MSG_CHECKING([private directory])
 AC_ARG_WITH(private-dir,
-            AC_HELP_STRING([--with-private-dir=DIR],
+            AS_HELP_STRING([--with-private-dir=DIR],
                            [Directory to install realmd system defaults (default: ${prefix}/lib/realmd)]))
 
 if test -n "$with_private_dir"; then
