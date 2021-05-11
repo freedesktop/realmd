@@ -223,6 +223,19 @@ $ realm join --user=admin --computer-ou=OU=Special domain.example.com
 			is automatically selected.</para></listitem>
 		</varlistentry>
 		<varlistentry>
+			<term><option>--computer-name=xxx</option></term>
+			<listitem>
+				<para>This option only applies to Active
+				Directory realms. Specify this option to
+				override the default name used when creating
+				the computer account. The system's FQDN will
+				still be saved in the dNSHostName attribute.</para>
+				<para>Specify the name as a string of 15 or
+				fewer characters that is a valid NetBIOS
+				computer name.</para>
+			</listitem>
+		</varlistentry>
+		<varlistentry>
 			<term><option>--no-password</option></term>
 			<listitem><para>Perform the join automatically without
 			a password.</para></listitem>
